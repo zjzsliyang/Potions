@@ -12,6 +12,8 @@
 		2F91DE491EADD9450041915F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91DE471EADD9450041915F /* Main.storyboard */; };
 		2F91DE4B1EADD9450041915F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F91DE4A1EADD9450041915F /* Assets.xcassets */; };
 		2F91DE4E1EADD9450041915F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91DE4C1EADD9450041915F /* LaunchScreen.storyboard */; };
+		2FF5D7C71EB74CBA0018454D /* elevb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5D7C61EB74CBA0018454D /* elevb.ttf */; };
+		2FF5D7C91EB74EB00018454D /* digital7(italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5D7C81EB74EB00018454D /* digital7(italic).ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2F91DE4A1EADD9450041915F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F91DE4D1EADD9450041915F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F91DE4F1EADD9450041915F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FF5D7C61EB74CBA0018454D /* elevb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elevb.ttf; sourceTree = "<group>"; };
+		2FF5D7C81EB74EB00018454D /* digital7(italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital7(italic).ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F71D0821EB74F9100264A44 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				2FF5D7C61EB74CBA0018454D /* elevb.ttf */,
+				2FF5D7C81EB74EB00018454D /* digital7(italic).ttf */,
+			);
+			name = Res;
+			sourceTree = "<group>";
+		};
 		2F91DE371EADD9450041915F = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +72,7 @@
 				2F91DE471EADD9450041915F /* Main.storyboard */,
 				2F91DE4A1EADD9450041915F /* Assets.xcassets */,
 				2F91DE4C1EADD9450041915F /* LaunchScreen.storyboard */,
+				2F71D0821EB74F9100264A44 /* Res */,
 				2F91DE4F1EADD9450041915F /* Info.plist */,
 			);
 			path = Lift;
@@ -127,6 +141,8 @@
 				2F91DE4E1EADD9450041915F /* LaunchScreen.storyboard in Resources */,
 				2F91DE4B1EADD9450041915F /* Assets.xcassets in Resources */,
 				2F91DE491EADD9450041915F /* Main.storyboard in Resources */,
+				2FF5D7C91EB74EB00018454D /* digital7(italic).ttf in Resources */,
+				2FF5D7C71EB74CBA0018454D /* elevb.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
