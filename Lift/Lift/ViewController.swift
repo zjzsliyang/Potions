@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   let floorCount = 20
   let liftCount = 5
   let distanceX: CGFloat = 170
   let distanceY: CGFloat = 60
+  
   var upDownButton = [[UIButton]]()
   var liftDisplay = [UILabel]()
   var lift = [UIButton]()
@@ -30,9 +31,42 @@ class ViewController: UIViewController {
     for _ in 1...liftCount {
       let liftUnit = UIButton(frame: CGRect(x: liftX, y: 1290, width: 33.6, height: 45.7))
       liftUnit.setImage(UIImage(named: "lift"), for: .normal)
+      liftUnit.addTarget(self, action: #selector(popoverChosenView), for: .touchUpInside)
       self.view.addSubview(liftUnit)
       liftX = liftX + distanceX
     }
+  }
+  
+  func popoverChosenView() {
+    let layout = UICollectionViewFlowLayout()
+    let chosenView = UICollectionView(frame: CGRect(x: 520, y: 620, width: 300, height: 240), collectionViewLayout: layout)
+    chosenView.delegate = self
+    chosenView.dataSource = self
+    chosenView.register(LiftButtonViewCell.self, forCellWithReuseIdentifier: "cell")
+    chosenView.backgroundColor = UIColor.lightGray
+    self.view.addSubview(chosenView)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LiftButtonViewCell
+    cell.liftButton?.setTitle(convertNumber(number: indexPath.row + 1), for: .normal)
+    return cell
+  }
+  
+  func convertNumber(number: Int) -> String {
+    if number < 10 {
+      return String(number)
+    } else {
+      return String(describing: UnicodeScalar(number - 10 + 65)!)
+    }
+  }
+  
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return floorCount
   }
 
   func initFloorSign() {
@@ -85,3 +119,20 @@ class ViewController: UIViewController {
   }
 }
 
+class LiftButtonViewCell: UICollectionViewCell {
+  var liftButton: UIButton?
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    initView()
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  func initView() {
+    liftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    liftButton?.titleLabel?.font = UIFont(name: "Elevator Buttons", size: 50)
+    self.addSubview(liftButton!)
+  }
+}

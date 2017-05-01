@@ -12,6 +12,9 @@
         <array key="digital7(italic).ttf">
             <string>Digital-7Italic</string>
         </array>
+        <array key="elevb.ttf">
+            <string>ElevatorButtons</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -30,6 +33,13 @@
                                 <rect key="frame" x="20" y="40" width="77" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Digital-7Italic" family="Digital-7" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-u9-t3e">
+                                <rect key="frame" x="35" y="62" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ElevatorButtons" family="Elevator Buttons" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
