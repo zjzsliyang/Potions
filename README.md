@@ -5,7 +5,7 @@
 
 an elevator dispatch iOS app
 
-![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad Pro-12.9 inch-orange.svg)
+![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg)
 
 **DDL: May 7th, 2017**
 
