@@ -57,7 +57,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LiftButtonViewCell
     cell.liftButton?.setTitle(convertNumber(number: indexPath.row + 1), for: .normal)
-    cell.liftButton?.setTitleColor(UIColor.blue, for: .highlighted)
+    cell.liftButton?.setTitleColor(UIColor.blue, for: .selected)
+    cell.liftButton?.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
     return cell
   }
   
