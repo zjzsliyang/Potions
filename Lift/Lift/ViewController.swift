@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate {
   let floorCount = 20
   let liftCount = 5
   let distanceX: CGFloat = 170
@@ -31,25 +31,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     for _ in 1...liftCount {
       let liftUnit = UIButton(frame: CGRect(x: liftX, y: 1290, width: 33.6, height: 45.7))
       liftUnit.setImage(UIImage(named: "lift"), for: .normal)
-      liftUnit.addTarget(self, action: #selector(popoverChosenView), for: .touchUpInside)
+      liftUnit.addTarget(self, action: #selector(popoverChosenView(sender:)), for: .touchUpInside)
       self.view.addSubview(liftUnit)
       liftX = liftX + distanceX
     }
   }
   
-  func popoverChosenView() {
+  func popoverChosenView(sender: UIButton) {
     let layout = UICollectionViewFlowLayout()
-    let chosenView = UICollectionView(frame: CGRect(x: 520, y: 620, width: 300, height: 240), collectionViewLayout: layout)
+    let chosenView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 300, height: 240), collectionViewLayout: layout)
     chosenView.delegate = self
     chosenView.dataSource = self
     chosenView.register(LiftButtonViewCell.self, forCellWithReuseIdentifier: "cell")
     chosenView.backgroundColor = UIColor.lightGray
-    self.view.addSubview(chosenView)
+    let popoverViewController = UIViewController()
+    popoverViewController.modalPresentationStyle = .popover
+    popoverViewController.popoverPresentationController?.sourceView = sender
+    popoverViewController.popoverPresentationController?.sourceRect = sender.bounds
+    popoverViewController.preferredContentSize = chosenView.bounds.size
+    popoverViewController.popoverPresentationController?.delegate = self
+    popoverViewController.view.addSubview(chosenView)
+    self.present(popoverViewController, animated: true, completion: nil)
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LiftButtonViewCell
     cell.liftButton?.setTitle(convertNumber(number: indexPath.row + 1), for: .normal)
+    cell.liftButton?.setTitleColor(UIColor.blue, for: .highlighted)
     return cell
   }
   
