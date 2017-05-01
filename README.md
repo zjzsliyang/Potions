@@ -1,9 +1,9 @@
 # Potions
-42002403 Spring2017 Operating Systems Project including elevator dispatch by Dongqing WANG @ SSE, TJU
+42002403 Spring2017 Operating Systems Project by Dongqing WANG @ SSE, TJU
 
 ## Lift
 
-an elevator dispatch iOS app
+a destination dispatch iOS app for multi-elevator
 
 ![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg)
 

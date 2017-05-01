@@ -1,5 +1,5 @@
 //
-//  DestinationDispatch.swift
+//  Dispatch.swift
 //  Lift
 //
 //  Created by Yang Li on 01/05/2017.
