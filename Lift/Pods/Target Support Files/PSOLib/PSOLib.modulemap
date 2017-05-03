@@ -1,0 +1,6 @@
+framework module PSOLib {
+  umbrella header "PSOLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

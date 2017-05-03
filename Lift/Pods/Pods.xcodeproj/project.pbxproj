@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03CF9C1BD2572BDF8FFE699B0CB643C3 /* PSOAlea.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B4973A7E3F2C64E6D0B6E7A08C211E0 /* PSOAlea.mm */; };
+		0FAB3AE30E6FF35BA7EF1605F1DB04A8 /* PSOStandardOptimizer2011.h in Headers */ = {isa = PBXBuildFile; fileRef = E3F2CD7BC9E95D356F57C37689756371 /* PSOStandardOptimizer2011.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26BEC97280711325DFA4B4CAA1A2D2AE /* Pods-Lift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A036DD637C4B5DE2F8B1EAF168F4DE /* Pods-Lift-dummy.m */; };
+		61100FAB6FFF5F4B85A0ACC1093202FD /* PSOSearchSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F87391332D4E5BA63C5BD802982C4D /* PSOSearchSpace.m */; };
+		636C58375D5E8B98D7997643E68D71C5 /* PSOSearchSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6C39F7AFE862C8BDF45814BECC1B3 /* PSOSearchSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AC8E402E79797AB33C988E601868B57 /* PSOStandardOptimizer2011.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FFA15E5C09A2B0F7BA487F8A184224 /* PSOStandardOptimizer2011.m */; };
+		6F4209D7A01E7E6D352FC6389EDE3834 /* PSOStandardOptimizer2011CircleTopology.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D8595DF4E10EF4DA4BC31C0D1A21FC3 /* PSOStandardOptimizer2011CircleTopology.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7625FDBF2E0568EB09103CD820D338F1 /* PSORandKISS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E51AC16E240C6E9DB4F7C7D39B783B3 /* PSORandKISS.mm */; };
+		8D67442713374AE30B44F4A64BD02D91 /* PSOLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDB58D39EC6EF7BF64ABD67F93CE298 /* PSOLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F335CCF5597C8806C6205CD99158B64 /* PSOLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C32D560D66D3D62F1102E9DB5F521FC /* PSOLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0F3AA2821BA026D621FF98F3167A1BC /* PSOLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8391A96B98260B9E9BED07797B74C8E4 /* PSOLib-dummy.m */; };
+		A745E2C1F91B05EC6116F3FDEBF5BD58 /* PSOStandardOptimizer2011_Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 69F0EFE8A950E00E1B5459FA69A597D2 /* PSOStandardOptimizer2011_Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A970A46FE5C89490FCFCEAD1058362C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
+		B2B9F9F899BC9A9BFCF2099F2C67E0E0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */; };
+		B833D9463A611BAD71ABC06B805EE52C /* PSOImmutableProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8385FFCDA3BD3930A1A09DF219535296 /* PSOImmutableProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD5826369B3D181501F6C00CBB1B304F /* PSORandKISS.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F3B76893EA6318D92442562F002932 /* PSORandKISS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C15668B73E43273AC6F5AF037E7115C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
+		C68BC55618D8C874DDD931164A99C207 /* PSOAlea.h in Headers */ = {isa = PBXBuildFile; fileRef = 28FBC32AF8D1A922102682E04BB344B7 /* PSOAlea.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CABA3511B63709E9CA9BC466786EA4E4 /* Pods-Lift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EAABCC5D0EC128B1C26A2D5CC59FD55 /* Pods-Lift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD604C5DCCC693B4A134F7B3CB7A6408 /* PSOFitnessCalculating.h in Headers */ = {isa = PBXBuildFile; fileRef = A3035868CBC6B5803075CF6E8AE98E38 /* PSOFitnessCalculating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC7E472EA5938E82C4EE7F4C9C883D64 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610456575627A8488EC31519CAD95680 /* Security.framework */; };
+		E9DB4212C8F0048AA4E7722951E5A0AB /* PSOStandardOptimizer2011CircleTopology.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E8A590F5EC48B120C2A05F6150D85 /* PSOStandardOptimizer2011CircleTopology.m */; };
+		FE8510966F672BFFDA4FA1D2CDCD4D77 /* PSOImmutableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD21F156A3506DEFF23294932E1F257 /* PSOImmutableProxy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0113807B7703C4B8AD09C836D3F83CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F8FC510C0F8471F8080378E425D7FAA;
+			remoteInfo = PSOLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05551F9E1E9F7F8C29A9A0ACC0B9DF54 /* PSOLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PSOLib.framework; path = PSOLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PSOLib.xcconfig; sourceTree = "<group>"; };
+		28FBC32AF8D1A922102682E04BB344B7 /* PSOAlea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOAlea.h; path = Pod/PSOAlea.h; sourceTree = "<group>"; };
+		2E51AC16E240C6E9DB4F7C7D39B783B3 /* PSORandKISS.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = PSORandKISS.mm; path = Pod/PSORandKISS.mm; sourceTree = "<group>"; };
+		3492C98B349BBDB473EEEFBE3D07680A /* Pods-Lift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lift.release.xcconfig"; sourceTree = "<group>"; };
+		3A77AE73CCB3E81B15D9146CE73612FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40E9A7E09A9A105491D8FC63DF7BC81A /* Pods_Lift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lift.framework; path = "Pods-Lift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F87391332D4E5BA63C5BD802982C4D /* PSOSearchSpace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOSearchSpace.m; path = Pod/PSOSearchSpace.m; sourceTree = "<group>"; };
+		4C32D560D66D3D62F1102E9DB5F521FC /* PSOLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSOLib-umbrella.h"; sourceTree = "<group>"; };
+		51D48D4FC67A8D89DB290149B9768103 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55F3B76893EA6318D92442562F002932 /* PSORandKISS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSORandKISS.h; path = Pod/PSORandKISS.h; sourceTree = "<group>"; };
+		560E8A590F5EC48B120C2A05F6150D85 /* PSOStandardOptimizer2011CircleTopology.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOStandardOptimizer2011CircleTopology.m; path = Pod/PSOStandardOptimizer2011CircleTopology.m; sourceTree = "<group>"; };
+		610456575627A8488EC31519CAD95680 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		62BB71A366A633315ED4C1D052D12FEE /* Pods-Lift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lift-frameworks.sh"; sourceTree = "<group>"; };
+		69F0EFE8A950E00E1B5459FA69A597D2 /* PSOStandardOptimizer2011_Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011_Subclass.h; path = Pod/PSOStandardOptimizer2011_Subclass.h; sourceTree = "<group>"; };
+		6D074199A84EDE538F2B8EC2239FC050 /* Pods-Lift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lift-resources.sh"; sourceTree = "<group>"; };
+		702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		71EFA3533F1149C3263EC30BD0AAE395 /* PSOLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PSOLib.modulemap; sourceTree = "<group>"; };
+		739933A75FA923BB68C6E07C66836105 /* Pods-Lift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7AB6C39F7AFE862C8BDF45814BECC1B3 /* PSOSearchSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOSearchSpace.h; path = Pod/PSOSearchSpace.h; sourceTree = "<group>"; };
+		7B4973A7E3F2C64E6D0B6E7A08C211E0 /* PSOAlea.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = PSOAlea.mm; path = Pod/PSOAlea.mm; sourceTree = "<group>"; };
+		8385FFCDA3BD3930A1A09DF219535296 /* PSOImmutableProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOImmutableProxy.h; path = Pod/PSOImmutableProxy.h; sourceTree = "<group>"; };
+		8391A96B98260B9E9BED07797B74C8E4 /* PSOLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PSOLib-dummy.m"; sourceTree = "<group>"; };
+		8D8595DF4E10EF4DA4BC31C0D1A21FC3 /* PSOStandardOptimizer2011CircleTopology.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011CircleTopology.h; path = Pod/PSOStandardOptimizer2011CircleTopology.h; sourceTree = "<group>"; };
+		8EAABCC5D0EC128B1C26A2D5CC59FD55 /* Pods-Lift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lift-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93FFA15E5C09A2B0F7BA487F8A184224 /* PSOStandardOptimizer2011.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOStandardOptimizer2011.m; path = Pod/PSOStandardOptimizer2011.m; sourceTree = "<group>"; };
+		9EDB58D39EC6EF7BF64ABD67F93CE298 /* PSOLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOLib.h; path = Pod/PSOLib.h; sourceTree = "<group>"; };
+		A3035868CBC6B5803075CF6E8AE98E38 /* PSOFitnessCalculating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOFitnessCalculating.h; path = Pod/PSOFitnessCalculating.h; sourceTree = "<group>"; };
+		AD9647BA204CD15A2EF67D6AAB7E4060 /* Pods-Lift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lift-acknowledgements.plist"; sourceTree = "<group>"; };
+		B1825D3FEBD0207547C8BE2B0E900C7E /* Pods-Lift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lift.debug.xcconfig"; sourceTree = "<group>"; };
+		D1A036DD637C4B5DE2F8B1EAF168F4DE /* Pods-Lift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lift-dummy.m"; sourceTree = "<group>"; };
+		E3F2CD7BC9E95D356F57C37689756371 /* PSOStandardOptimizer2011.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011.h; path = Pod/PSOStandardOptimizer2011.h; sourceTree = "<group>"; };
+		E9734187A9E7F79D9031E4B04B3B634B /* PSOLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSOLib-prefix.pch"; sourceTree = "<group>"; };
+		FCD21F156A3506DEFF23294932E1F257 /* PSOImmutableProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOImmutableProxy.m; path = Pod/PSOImmutableProxy.m; sourceTree = "<group>"; };
+		FED2E374CCEF1DAC1BFB342B9176DCCB /* Pods-Lift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lift.modulemap"; sourceTree = "<group>"; };
+		FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31D3499FF98399A4FA8254523400E0D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15668B73E43273AC6F5AF037E7115C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6DBED4EFF2C011B426CA6DD37CE0736 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2B9F9F899BC9A9BFCF2099F2C67E0E0 /* Accelerate.framework in Frameworks */,
+				A970A46FE5C89490FCFCEAD1058362C2 /* Foundation.framework in Frameworks */,
+				DC7E472EA5938E82C4EE7F4C9C883D64 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				759E89578DC36C18D3A9C61D55DD5B5E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B1656139EE0754E1E724B2C63D3CC6A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A51DC9C208A638819802AC4F220DC7A /* Pods-Lift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		759E89578DC36C18D3A9C61D55DD5B5E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */,
+				702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */,
+				610456575627A8488EC31519CAD95680 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		779921BA924FCA581E244F3B1BF9DCE2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				51D48D4FC67A8D89DB290149B9768103 /* Info.plist */,
+				71EFA3533F1149C3263EC30BD0AAE395 /* PSOLib.modulemap */,
+				1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */,
+				8391A96B98260B9E9BED07797B74C8E4 /* PSOLib-dummy.m */,
+				E9734187A9E7F79D9031E4B04B3B634B /* PSOLib-prefix.pch */,
+				4C32D560D66D3D62F1102E9DB5F521FC /* PSOLib-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PSOLib";
+			sourceTree = "<group>";
+		};
+		7A51DC9C208A638819802AC4F220DC7A /* Pods-Lift */ = {
+			isa = PBXGroup;
+			children = (
+				3A77AE73CCB3E81B15D9146CE73612FB /* Info.plist */,
+				FED2E374CCEF1DAC1BFB342B9176DCCB /* Pods-Lift.modulemap */,
+				739933A75FA923BB68C6E07C66836105 /* Pods-Lift-acknowledgements.markdown */,
+				AD9647BA204CD15A2EF67D6AAB7E4060 /* Pods-Lift-acknowledgements.plist */,
+				D1A036DD637C4B5DE2F8B1EAF168F4DE /* Pods-Lift-dummy.m */,
+				62BB71A366A633315ED4C1D052D12FEE /* Pods-Lift-frameworks.sh */,
+				6D074199A84EDE538F2B8EC2239FC050 /* Pods-Lift-resources.sh */,
+				8EAABCC5D0EC128B1C26A2D5CC59FD55 /* Pods-Lift-umbrella.h */,
+				B1825D3FEBD0207547C8BE2B0E900C7E /* Pods-Lift.debug.xcconfig */,
+				3492C98B349BBDB473EEEFBE3D07680A /* Pods-Lift.release.xcconfig */,
+			);
+			name = "Pods-Lift";
+			path = "Target Support Files/Pods-Lift";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				EAA9AE951E19D4745D986030C3329B56 /* Pods */,
+				DD0795BB76A370BD585AA3C84AD27E1E /* Products */,
+				3B1656139EE0754E1E724B2C63D3CC6A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		99F21C37A908A1E64EFE6EE712FED6EA /* PSOLib */ = {
+			isa = PBXGroup;
+			children = (
+				28FBC32AF8D1A922102682E04BB344B7 /* PSOAlea.h */,
+				7B4973A7E3F2C64E6D0B6E7A08C211E0 /* PSOAlea.mm */,
+				A3035868CBC6B5803075CF6E8AE98E38 /* PSOFitnessCalculating.h */,
+				8385FFCDA3BD3930A1A09DF219535296 /* PSOImmutableProxy.h */,
+				FCD21F156A3506DEFF23294932E1F257 /* PSOImmutableProxy.m */,
+				9EDB58D39EC6EF7BF64ABD67F93CE298 /* PSOLib.h */,
+				55F3B76893EA6318D92442562F002932 /* PSORandKISS.h */,
+				2E51AC16E240C6E9DB4F7C7D39B783B3 /* PSORandKISS.mm */,
+				7AB6C39F7AFE862C8BDF45814BECC1B3 /* PSOSearchSpace.h */,
+				41F87391332D4E5BA63C5BD802982C4D /* PSOSearchSpace.m */,
+				E3F2CD7BC9E95D356F57C37689756371 /* PSOStandardOptimizer2011.h */,
+				93FFA15E5C09A2B0F7BA487F8A184224 /* PSOStandardOptimizer2011.m */,
+				69F0EFE8A950E00E1B5459FA69A597D2 /* PSOStandardOptimizer2011_Subclass.h */,
+				8D8595DF4E10EF4DA4BC31C0D1A21FC3 /* PSOStandardOptimizer2011CircleTopology.h */,
+				560E8A590F5EC48B120C2A05F6150D85 /* PSOStandardOptimizer2011CircleTopology.m */,
+				779921BA924FCA581E244F3B1BF9DCE2 /* Support Files */,
+			);
+			name = PSOLib;
+			path = PSOLib;
+			sourceTree = "<group>";
+		};
+		DD0795BB76A370BD585AA3C84AD27E1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40E9A7E09A9A105491D8FC63DF7BC81A /* Pods_Lift.framework */,
+				05551F9E1E9F7F8C29A9A0ACC0B9DF54 /* PSOLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAA9AE951E19D4745D986030C3329B56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99F21C37A908A1E64EFE6EE712FED6EA /* PSOLib */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		10F600F1AB893144909D0497577F1442 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABA3511B63709E9CA9BC466786EA4E4 /* Pods-Lift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		244998C7BD398B1D347B81EEED4DF315 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C68BC55618D8C874DDD931164A99C207 /* PSOAlea.h in Headers */,
+				CD604C5DCCC693B4A134F7B3CB7A6408 /* PSOFitnessCalculating.h in Headers */,
+				B833D9463A611BAD71ABC06B805EE52C /* PSOImmutableProxy.h in Headers */,
+				9F335CCF5597C8806C6205CD99158B64 /* PSOLib-umbrella.h in Headers */,
+				8D67442713374AE30B44F4A64BD02D91 /* PSOLib.h in Headers */,
+				BD5826369B3D181501F6C00CBB1B304F /* PSORandKISS.h in Headers */,
+				636C58375D5E8B98D7997643E68D71C5 /* PSOSearchSpace.h in Headers */,
+				0FAB3AE30E6FF35BA7EF1605F1DB04A8 /* PSOStandardOptimizer2011.h in Headers */,
+				A745E2C1F91B05EC6116F3FDEBF5BD58 /* PSOStandardOptimizer2011_Subclass.h in Headers */,
+				6F4209D7A01E7E6D352FC6389EDE3834 /* PSOStandardOptimizer2011CircleTopology.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8F8FC510C0F8471F8080378E425D7FAA /* PSOLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C43E2210FE2D15F5432D133DF188635 /* Build configuration list for PBXNativeTarget "PSOLib" */;
+			buildPhases = (
+				27C202ED5DE7009731712A88FBD08D27 /* Sources */,
+				E6DBED4EFF2C011B426CA6DD37CE0736 /* Frameworks */,
+				244998C7BD398B1D347B81EEED4DF315 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSOLib;
+			productName = PSOLib;
+			productReference = 05551F9E1E9F7F8C29A9A0ACC0B9DF54 /* PSOLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F81AFB0362A3CEF9BA56F054BC0080E6 /* Pods-Lift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3F95FF1E7E84B466602757201925D18 /* Build configuration list for PBXNativeTarget "Pods-Lift" */;
+			buildPhases = (
+				6048858E7ED8AF95B08258864F25478B /* Sources */,
+				31D3499FF98399A4FA8254523400E0D2 /* Frameworks */,
+				10F600F1AB893144909D0497577F1442 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E40DFC9C6FD5B6A7A2AC84FC6BA26A98 /* PBXTargetDependency */,
+			);
+			name = "Pods-Lift";
+			productName = "Pods-Lift";
+			productReference = 40E9A7E09A9A105491D8FC63DF7BC81A /* Pods_Lift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = DD0795BB76A370BD585AA3C84AD27E1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F81AFB0362A3CEF9BA56F054BC0080E6 /* Pods-Lift */,
+				8F8FC510C0F8471F8080378E425D7FAA /* PSOLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27C202ED5DE7009731712A88FBD08D27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03CF9C1BD2572BDF8FFE699B0CB643C3 /* PSOAlea.mm in Sources */,
+				FE8510966F672BFFDA4FA1D2CDCD4D77 /* PSOImmutableProxy.m in Sources */,
+				A0F3AA2821BA026D621FF98F3167A1BC /* PSOLib-dummy.m in Sources */,
+				7625FDBF2E0568EB09103CD820D338F1 /* PSORandKISS.mm in Sources */,
+				61100FAB6FFF5F4B85A0ACC1093202FD /* PSOSearchSpace.m in Sources */,
+				6AC8E402E79797AB33C988E601868B57 /* PSOStandardOptimizer2011.m in Sources */,
+				E9DB4212C8F0048AA4E7722951E5A0AB /* PSOStandardOptimizer2011CircleTopology.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6048858E7ED8AF95B08258864F25478B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BEC97280711325DFA4B4CAA1A2D2AE /* Pods-Lift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E40DFC9C6FD5B6A7A2AC84FC6BA26A98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PSOLib;
+			target = 8F8FC510C0F8471F8080378E425D7FAA /* PSOLib */;
+			targetProxy = 0113807B7703C4B8AD09C836D3F83CEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CE486C033BD85166FCF7E5BAFF50060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1825D3FEBD0207547C8BE2B0E900C7E /* Pods-Lift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Lift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Lift/Pods-Lift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Lift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C382132BB6BF8CA1A911872A2062FD0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CCB096B10C32FFDD08BC5568B4B8534C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PSOLib/PSOLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PSOLib/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PSOLib/PSOLib.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PSOLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E0ABBB595A0FF5EBBD17FB310BB93271 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3492C98B349BBDB473EEEFBE3D07680A /* Pods-Lift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Lift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Lift/Pods-Lift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Lift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE320A3D579A8F6D03CFE1E46C325CD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PSOLib/PSOLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PSOLib/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PSOLib/PSOLib.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PSOLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C382132BB6BF8CA1A911872A2062FD0D /* Debug */,
+				156284431C64CB05C59BDA0595A1E95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C43E2210FE2D15F5432D133DF188635 /* Build configuration list for PBXNativeTarget "PSOLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE320A3D579A8F6D03CFE1E46C325CD3 /* Debug */,
+				CCB096B10C32FFDD08BC5568B4B8534C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3F95FF1E7E84B466602757201925D18 /* Build configuration list for PBXNativeTarget "Pods-Lift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CE486C033BD85166FCF7E5BAFF50060 /* Debug */,
+				E0ABBB595A0FF5EBBD17FB310BB93271 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
