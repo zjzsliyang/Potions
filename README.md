@@ -5,7 +5,7 @@
 
 a destination dispatch iOS app for multi-elevator
 
-![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg)
+![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
 
 **DDL: May 7th, 2017**
 

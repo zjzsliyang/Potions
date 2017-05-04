@@ -36,6 +36,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     initLift()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    let timer = Timer(timeInterval: 0.1, repeats: true) { (timer) in
+      for i in 0..<self.liftCount {
+        self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: i), liftIndex: i)
+      }
+    }
+    RunLoop.current.add(timer, forMode: .commonModes)
+    timer.fire()
+  }
+  
   func initLift() {
     var liftX: CGFloat = 250
     for liftIndex in 0..<liftCount {
@@ -93,18 +105,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func liftAnimation(liftIndex: Int) {
-    // add animation
     scanDispatch(liftIndex: liftIndex)
+    if liftDestinationQueue[liftIndex].isEmpty {
+      return
+    }
     let destinationFloor = liftDestinationQueue[liftIndex].dequeue() + 1
     print("destination floor: " + String(destinationFloor))
     let destinationDistance = CGFloat(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)) * (distanceY)
     let destinationTime = liftVelocity * abs(Double(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)))
-    UIView.animate(withDuration: destinationTime, delay: liftDelay, options: [], animations: {
-      print(self.lift[liftIndex].center.y)
+    UIView.animate(withDuration: destinationTime, delay: liftDelay, options: .curveEaseInOut, animations: {
       self.lift[liftIndex].center.y = self.lift[liftIndex].center.y - destinationDistance
-      print(self.lift[liftIndex].center.y)
     }, completion: { (finished) in
-      self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
+//      self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
       if !self.liftDestinationQueue[liftIndex].isEmpty {
         self.liftAnimation(liftIndex: liftIndex)
       }
@@ -112,7 +124,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func getLiftCurrentFloor(liftIndex: Int) -> Int {
-    return (Int(floor((1290 - lift[liftIndex].frame.minY) / distanceY)) + 1)
+    if lift[liftIndex].layer.presentation()?.position != nil {
+      return (Int(floor((1290 - (lift[liftIndex].layer.presentation()!.frame.minY)) / distanceY)) + 1)
+    } else {
+      print("returning model position")
+      return (Int(floor((1290 - (lift[liftIndex].layer.model().frame.minY)) / distanceY)) + 1)
+    }
   }
   
   func updateLiftDisplay(currentFloor: Int, liftIndex: Int) {
