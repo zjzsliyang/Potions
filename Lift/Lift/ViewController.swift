@@ -17,7 +17,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   let distanceX: CGFloat = 170
   let distanceY: CGFloat = 60
   
-  let liftVelocity: Double = 2
+  let liftVelocity: Double = 0.3
+  let liftDelay: Double = 0.5
   
   var upDownButton = [[UIButton]]()
   var liftDisplay = [UILabel]()
@@ -84,17 +85,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     for i in 0..<floorCount {
       if liftCurrentButton[liftIndex][i] {
         liftDestinationQueue[liftIndex].enqueue(i)
+        liftCurrentButton[liftIndex][i] = false
       }
     }
   }
   
   func liftAnimation(liftIndex: Int) {
     // add animation
-    UIView.animate(withDuration: 0.3, animations: { 
-      self.lift[liftIndex].center.y -= self.distanceY
-    }) { (finished) in
+    scanDispatch(liftIndex: liftIndex)
+    let destinationFloor = liftDestinationQueue[liftIndex].dequeue() + 1
+    print("destinationFloor: " + String(destinationFloor))
+    let destinationDistance = CGFloat(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)) * (distanceY)
+    let destinationTime = liftVelocity * Double(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex))
+    UIView.animate(withDuration: destinationTime, delay: liftDelay, options: [], animations: {
+      print(destinationDistance)
+      self.lift[liftIndex].center.y -= destinationDistance
+    }, completion: { (finished) in
       self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
-    }
+      while !self.liftDestinationQueue[liftIndex].isEmpty {
+        self.liftAnimation(liftIndex: liftIndex)
+      }
+    })
   }
   
   func getLiftCurrentFloor(liftIndex: Int) -> Int {
