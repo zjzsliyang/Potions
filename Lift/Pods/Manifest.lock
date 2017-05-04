@@ -1,12 +1,15 @@
 PODS:
+  - Buckets (2.0.0)
   - PSOLib (1.0.0)
 
 DEPENDENCIES:
+  - Buckets (~> 2.0)
   - PSOLib (~> 1.0.0)
 
 SPEC CHECKSUMS:
+  Buckets: bfb032d458a88bda64f7144afcd974aad237ef21
   PSOLib: 60f09d7db40f557ab8becbead3f8d0b0306cb9dc
 
-PODFILE CHECKSUM: 11bba78f1e17fbb9fd04ec2964995b817cca2afe
+PODFILE CHECKSUM: 5e059c4060ec2393be00e8613a7d2034782a1434
 
 COCOAPODS: 1.1.1

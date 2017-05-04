@@ -8,6 +8,7 @@
 
 import UIKit
 import PSOLib
+import Buckets
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate {
   
@@ -16,12 +17,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   let distanceX: CGFloat = 170
   let distanceY: CGFloat = 60
   
+  let liftVelocity: Double = 2
+  
   var upDownButton = [[UIButton]]()
   var liftDisplay = [UILabel]()
-  var lift = [UIButton]()
+  var lift = [UIView]()
   var liftCurrentButton: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 5)
-  var liftCurrentDirection: [Bool] = Array(repeating: false, count: 5)  // false represents Up Direction
+  var liftCurrentDirection: [Int] = Array(repeating: 0, count: 5)  // 0 represents static, 1 represents Up Direction, -1 represents Down Direction
   var liftBeingSet: [Bool] = Array(repeating: false, count: 5)
+  var liftDestinationQueue = Array(repeating: Queue<Int>(), count: 5)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,10 +38,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func initLift() {
     var liftX: CGFloat = 250
     for liftIndex in 0..<liftCount {
-      let liftUnit = UIButton(frame: CGRect(x: liftX, y: 1290, width: 33.6, height: 45.7))
-      liftUnit.setImage(UIImage(named: "lift"), for: .normal)
-      liftUnit.tag = liftIndex
-      liftUnit.addTarget(self, action: #selector(popoverChosenView(sender:)), for: .touchUpInside)
+      let liftUnit = UIView(frame: CGRect(x: liftX, y: 1290, width: 33.6, height: 45.7))
+      let liftUnitButton = UIButton(frame: CGRect(x: 0, y: 0, width: liftUnit.frame.width, height: liftUnit.frame.height))
+      liftUnit.addSubview(liftUnitButton)
+      liftUnitButton.setImage(UIImage(named: "lift"), for: .normal)
+      liftUnitButton.tag = liftIndex
+      liftUnitButton.addTarget(self, action: #selector(popoverChosenView(sender:)), for: .touchUpInside)
       self.view.addSubview(liftUnit)
       lift.append(liftUnit)
       liftX = liftX + distanceX
@@ -66,6 +72,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
     for i in 0..<liftCount {
       if liftBeingSet[i] {
+        // how to start animation
         print("current lift: " + String(i))
         liftAnimation(liftIndex: i)
         liftBeingSet[i] = false
@@ -73,13 +80,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
   }
   
+  func scanDispatch(liftIndex: Int) {
+    for i in 0..<floorCount {
+      if liftCurrentButton[liftIndex][i] {
+        liftDestinationQueue[liftIndex].enqueue(i)
+      }
+    }
+  }
+  
   func liftAnimation(liftIndex: Int) {
-    let currentFloor = Int(ceil((1290 - lift[liftIndex].frame.minY) / distanceY)) + 1
-    
-    print(currentFloor)
+    // add animation
+    UIView.animate(withDuration: 0.3, animations: { 
+      self.lift[liftIndex].center.y -= self.distanceY
+    }) { (finished) in
+      self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
+    }
+  }
+  
+  func getLiftCurrentFloor(liftIndex: Int) -> Int {
+    return (Int(floor((1290 - lift[liftIndex].frame.minY) / distanceY)) + 1)
   }
   
   func updateLiftDisplay(currentFloor: Int, liftIndex: Int) {
+    // how to update liftDisplay
     liftDisplay[liftIndex].text = String(currentFloor)
   }
 

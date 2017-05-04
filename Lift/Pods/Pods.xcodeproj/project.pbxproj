@@ -7,109 +7,256 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03CF9C1BD2572BDF8FFE699B0CB643C3 /* PSOAlea.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B4973A7E3F2C64E6D0B6E7A08C211E0 /* PSOAlea.mm */; };
-		0FAB3AE30E6FF35BA7EF1605F1DB04A8 /* PSOStandardOptimizer2011.h in Headers */ = {isa = PBXBuildFile; fileRef = E3F2CD7BC9E95D356F57C37689756371 /* PSOStandardOptimizer2011.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26BEC97280711325DFA4B4CAA1A2D2AE /* Pods-Lift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A036DD637C4B5DE2F8B1EAF168F4DE /* Pods-Lift-dummy.m */; };
-		61100FAB6FFF5F4B85A0ACC1093202FD /* PSOSearchSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F87391332D4E5BA63C5BD802982C4D /* PSOSearchSpace.m */; };
-		636C58375D5E8B98D7997643E68D71C5 /* PSOSearchSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB6C39F7AFE862C8BDF45814BECC1B3 /* PSOSearchSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AC8E402E79797AB33C988E601868B57 /* PSOStandardOptimizer2011.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FFA15E5C09A2B0F7BA487F8A184224 /* PSOStandardOptimizer2011.m */; };
-		6F4209D7A01E7E6D352FC6389EDE3834 /* PSOStandardOptimizer2011CircleTopology.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D8595DF4E10EF4DA4BC31C0D1A21FC3 /* PSOStandardOptimizer2011CircleTopology.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7625FDBF2E0568EB09103CD820D338F1 /* PSORandKISS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E51AC16E240C6E9DB4F7C7D39B783B3 /* PSORandKISS.mm */; };
-		8D67442713374AE30B44F4A64BD02D91 /* PSOLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EDB58D39EC6EF7BF64ABD67F93CE298 /* PSOLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F335CCF5597C8806C6205CD99158B64 /* PSOLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C32D560D66D3D62F1102E9DB5F521FC /* PSOLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0F3AA2821BA026D621FF98F3167A1BC /* PSOLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8391A96B98260B9E9BED07797B74C8E4 /* PSOLib-dummy.m */; };
-		A745E2C1F91B05EC6116F3FDEBF5BD58 /* PSOStandardOptimizer2011_Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 69F0EFE8A950E00E1B5459FA69A597D2 /* PSOStandardOptimizer2011_Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A970A46FE5C89490FCFCEAD1058362C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
-		B2B9F9F899BC9A9BFCF2099F2C67E0E0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */; };
-		B833D9463A611BAD71ABC06B805EE52C /* PSOImmutableProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8385FFCDA3BD3930A1A09DF219535296 /* PSOImmutableProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD5826369B3D181501F6C00CBB1B304F /* PSORandKISS.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F3B76893EA6318D92442562F002932 /* PSORandKISS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C15668B73E43273AC6F5AF037E7115C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
-		C68BC55618D8C874DDD931164A99C207 /* PSOAlea.h in Headers */ = {isa = PBXBuildFile; fileRef = 28FBC32AF8D1A922102682E04BB344B7 /* PSOAlea.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CABA3511B63709E9CA9BC466786EA4E4 /* Pods-Lift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EAABCC5D0EC128B1C26A2D5CC59FD55 /* Pods-Lift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD604C5DCCC693B4A134F7B3CB7A6408 /* PSOFitnessCalculating.h in Headers */ = {isa = PBXBuildFile; fileRef = A3035868CBC6B5803075CF6E8AE98E38 /* PSOFitnessCalculating.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC7E472EA5938E82C4EE7F4C9C883D64 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610456575627A8488EC31519CAD95680 /* Security.framework */; };
-		E9DB4212C8F0048AA4E7722951E5A0AB /* PSOStandardOptimizer2011CircleTopology.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E8A590F5EC48B120C2A05F6150D85 /* PSOStandardOptimizer2011CircleTopology.m */; };
-		FE8510966F672BFFDA4FA1D2CDCD4D77 /* PSOImmutableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD21F156A3506DEFF23294932E1F257 /* PSOImmutableProxy.m */; };
+		05362555A4A0AE9115585E428F9A17E2 /* PSOStandardOptimizer2011.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C25152BFC038A04D909F1F828DEB1C9 /* PSOStandardOptimizer2011.m */; };
+		08DA6B025C259B430E5F92573D1A6F28 /* PSOSearchSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4712B485820B7B39613FACB8906D0AFB /* PSOSearchSpace.m */; };
+		08F9860E7572199E6921088AA8E8DC8D /* BitArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8BD1F2E57F4261D1C80AB714406368 /* BitArray.swift */; };
+		0A3B6B1E060AA2425E269CF78470F805 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D6B47C47E36099B4B0E41D0E4FB577 /* Stack.swift */; };
+		157DE1C6E35708D7BB22665039B4FCD5 /* Pods-Lift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A036DD637C4B5DE2F8B1EAF168F4DE /* Pods-Lift-dummy.m */; };
+		15D4768122F0AC8623C8C2FE792CE05B /* PSOSearchSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = F3420CA867ACE821C4D0CE2AACE01538 /* PSOSearchSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		218774BCA336C86EE93413883AA730F0 /* PSOLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1558AFA9828A3C6CACCAC3901075C /* PSOLib-dummy.m */; };
+		250F9EFE72E273602A8F2087EBD37A3F /* PSOImmutableProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E22DE297FFA78DCD2AB061817B123C4 /* PSOImmutableProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		395F9BFA681D10E59824A2756DBFBB75 /* PSOLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B7046EC77D7C823A4CC3A8F40CB7EDD4 /* PSOLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FC9E9F4D9197C3E6BBFB0B79BECC20F /* PSOAlea.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC547DE6C6853874E9B29C44DD5DABE /* PSOAlea.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42EFE667F70126849CBAD20445BE9F15 /* BloomFilterTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D862B8441C170824530D42824342E5 /* BloomFilterTypeExtensions.swift */; };
+		4BD9A662C9F4573897740C5F70DAAEDA /* PSOFitnessCalculating.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8E4D11AB74354B434BCE1157DA9284 /* PSOFitnessCalculating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DAD76E4CDC12A61E72513802D5E7496 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD36F1528D8C2334596B5CCA4C2EB4E /* Graph.swift */; };
+		50F37D2A7D439BB32157D48E95882455 /* BinaryHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A06F982B53C02EB9F7FA748DAE9191A /* BinaryHeap.swift */; };
+		51E7037FBE5255D557C6281908B9A0A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
+		56421FC57DAC0FA64248C7516F8B74BB /* PSOLib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E91F8DA7F8944F7B6029A5AF0CB7D389 /* PSOLib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD7FCF42DD982F38395BA3F43ED2296 /* Buckets-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23187BC092CAA6D5127FDADF3D83719E /* Buckets-dummy.m */; };
+		5DA0EAF7FCBA665D28E4477D4DC7665F /* Multiset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B970A812165D54EC53288E859070FF9 /* Multiset.swift */; };
+		6FC9BEC6F4CEF54A673811EB13165B62 /* Bimap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2653B1C625E40EE4C4DDE58D7C955 /* Bimap.swift */; };
+		70D8FB9BE56411118C1D205616D5C856 /* MatrixOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67BBAA57BC3C34F0F6D207963C9D23 /* MatrixOperators.swift */; };
+		84DD2CE41A859113EB80D307AC82E523 /* CircularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B1B15FE0774F91CF7D4F65383C654 /* CircularArray.swift */; };
+		8529742CA2D78BAC2CBFDC0417273B3F /* Buckets-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BA75D47343DC785117943514D50908 /* Buckets-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		859B115D84F88F62EC20A6E56CD50655 /* Pods-Lift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EAABCC5D0EC128B1C26A2D5CC59FD55 /* Pods-Lift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89FD984CCC891DFB943C1776BBF59B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
+		8C553EBEB6703FFBD1F873F03C7446F8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5511E224CFFA8684A067DD65444F18 /* Queue.swift */; };
+		8C9A0E4991C3F711F5DD92B51D35F578 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */; };
+		8CF640A3AB58BF3C59E89F4745571AE9 /* PSORandKISS.h in Headers */ = {isa = PBXBuildFile; fileRef = 546F6AE1B3FE29B585300B3E0D1AA219 /* PSORandKISS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		951DB43814028C89B1E5773450940D59 /* PSOStandardOptimizer2011_Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 71C62FEAEEB806CA4BE88CC0F21A241D /* PSOStandardOptimizer2011_Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95DD9F1F21D84CA8BAEEDE5F8D9C32C6 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860901012274A66BE1145411E39E52AC /* PriorityQueue.swift */; };
+		9A2D50848FA6FC655FD5567FA38EC5E2 /* PSORandKISS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8329181C17313F2945D236704EEDD17E /* PSORandKISS.mm */; };
+		AAE5270B6D1ACAEA0078775C4CDDF31F /* PSOAlea.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94E4F5C1FCEACC2BA694A050106AF313 /* PSOAlea.mm */; };
+		B3273BC0F08D6B0934AE22B4A7094A2A /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF5336F5E3C167A4E171AAC9E1EF873 /* Trie.swift */; };
+		B5DF818C03F6CFA636FFA0C5ACBDC3C7 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC1A2A1CDADE05FC4E1766872C1470 /* Matrix.swift */; };
+		B9AB2A801D222FE32DBEBED0F21D962C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */; };
+		BB87F488FAD59E8FC77BAD08BC5E7860 /* PSOStandardOptimizer2011CircleTopology.h in Headers */ = {isa = PBXBuildFile; fileRef = 495B11CB36535313FDA39C06EB41DDFD /* PSOStandardOptimizer2011CircleTopology.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC7455113E56E1B37504EE19098BE453 /* BloomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A560727F8F94976BF980CFC0EBE2BC5 /* BloomFilter.swift */; };
+		BC99414ACF359CD4EF6C12217F0AC801 /* Deque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBD487D5E4773B7F22DB6808FAED20E /* Deque.swift */; };
+		C120903B3E4E0BFFEAFB561C8B4B4014 /* FNVHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216938FCD8563897FD16C9869A5FCC0A /* FNVHash.swift */; };
+		CEE03F6CB3278449F057ABB9E19290C1 /* Multimap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F084BD7EDF807298CE11EE3FEF5C28 /* Multimap.swift */; };
+		D3CF6BCB72759D836152AA41B94C7071 /* PSOStandardOptimizer2011CircleTopology.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C231B4E8850C16EADA323BB891D3913 /* PSOStandardOptimizer2011CircleTopology.m */; };
+		D562AEB930A2752A826D58B0929843DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610456575627A8488EC31519CAD95680 /* Security.framework */; };
+		E21A3C7E86D9745D502709651BD2005C /* PSOStandardOptimizer2011.h in Headers */ = {isa = PBXBuildFile; fileRef = 29B77B9C95091AB1C75A10049F32AB31 /* PSOStandardOptimizer2011.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA7A8E16F5EEE6D44423D21E5E3F584E /* PSOImmutableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C0D4DB554B69BC931E269989DF6133 /* PSOImmutableProxy.m */; };
+		F8FB529644F141C9FD99A1232B21E154 /* BloomFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2C5651462E864328333C9B22511DA3 /* BloomFilterType.swift */; };
+		FF8C5B0F5A38F27896C9AA15EB85E8A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0113807B7703C4B8AD09C836D3F83CEB /* PBXContainerItemProxy */ = {
+		7E56509496FD749C16C9874E19049560 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8F8FC510C0F8471F8080378E425D7FAA;
+			remoteGlobalIDString = CFBBBA968F929C2BCE477FDA97EB6372;
 			remoteInfo = PSOLib;
+		};
+		FF72E9A72FDA7FF1EABB9B1299FC2292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45607E34508B941D3A1025186A8BF029;
+			remoteInfo = Buckets;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05551F9E1E9F7F8C29A9A0ACC0B9DF54 /* PSOLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PSOLib.framework; path = PSOLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PSOLib.xcconfig; sourceTree = "<group>"; };
-		28FBC32AF8D1A922102682E04BB344B7 /* PSOAlea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOAlea.h; path = Pod/PSOAlea.h; sourceTree = "<group>"; };
-		2E51AC16E240C6E9DB4F7C7D39B783B3 /* PSORandKISS.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = PSORandKISS.mm; path = Pod/PSORandKISS.mm; sourceTree = "<group>"; };
+		13A02D453328DF5F6B0FB5D5F35BD48F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17C0D4DB554B69BC931E269989DF6133 /* PSOImmutableProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOImmutableProxy.m; path = Pod/PSOImmutableProxy.m; sourceTree = "<group>"; };
+		1E22DE297FFA78DCD2AB061817B123C4 /* PSOImmutableProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOImmutableProxy.h; path = Pod/PSOImmutableProxy.h; sourceTree = "<group>"; };
+		216938FCD8563897FD16C9869A5FCC0A /* FNVHash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FNVHash.swift; path = Source/FNVHash.swift; sourceTree = "<group>"; };
+		23187BC092CAA6D5127FDADF3D83719E /* Buckets-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Buckets-dummy.m"; sourceTree = "<group>"; };
+		23F2653B1C625E40EE4C4DDE58D7C955 /* Bimap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bimap.swift; path = Source/Bimap.swift; sourceTree = "<group>"; };
+		29B77B9C95091AB1C75A10049F32AB31 /* PSOStandardOptimizer2011.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011.h; path = Pod/PSOStandardOptimizer2011.h; sourceTree = "<group>"; };
+		2CC547DE6C6853874E9B29C44DD5DABE /* PSOAlea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOAlea.h; path = Pod/PSOAlea.h; sourceTree = "<group>"; };
+		2F3BEDB08EAD38287EF09AD2019F25DB /* PSOLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSOLib-prefix.pch"; sourceTree = "<group>"; };
 		3492C98B349BBDB473EEEFBE3D07680A /* Pods-Lift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lift.release.xcconfig"; sourceTree = "<group>"; };
 		3A77AE73CCB3E81B15D9146CE73612FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40E9A7E09A9A105491D8FC63DF7BC81A /* Pods_Lift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lift.framework; path = "Pods-Lift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41F87391332D4E5BA63C5BD802982C4D /* PSOSearchSpace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOSearchSpace.m; path = Pod/PSOSearchSpace.m; sourceTree = "<group>"; };
-		4C32D560D66D3D62F1102E9DB5F521FC /* PSOLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSOLib-umbrella.h"; sourceTree = "<group>"; };
-		51D48D4FC67A8D89DB290149B9768103 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55F3B76893EA6318D92442562F002932 /* PSORandKISS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSORandKISS.h; path = Pod/PSORandKISS.h; sourceTree = "<group>"; };
-		560E8A590F5EC48B120C2A05F6150D85 /* PSOStandardOptimizer2011CircleTopology.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOStandardOptimizer2011CircleTopology.m; path = Pod/PSOStandardOptimizer2011CircleTopology.m; sourceTree = "<group>"; };
+		3C77F21BB60783F7740363F922BEE96C /* PSOLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PSOLib.framework; path = PSOLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4712B485820B7B39613FACB8906D0AFB /* PSOSearchSpace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOSearchSpace.m; path = Pod/PSOSearchSpace.m; sourceTree = "<group>"; };
+		490B1B15FE0774F91CF7D4F65383C654 /* CircularArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircularArray.swift; path = Source/CircularArray.swift; sourceTree = "<group>"; };
+		495B11CB36535313FDA39C06EB41DDFD /* PSOStandardOptimizer2011CircleTopology.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011CircleTopology.h; path = Pod/PSOStandardOptimizer2011CircleTopology.h; sourceTree = "<group>"; };
+		4DFC1A2A1CDADE05FC4E1766872C1470 /* Matrix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = Source/Matrix.swift; sourceTree = "<group>"; };
+		546F6AE1B3FE29B585300B3E0D1AA219 /* PSORandKISS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSORandKISS.h; path = Pod/PSORandKISS.h; sourceTree = "<group>"; };
+		5512C252A082E1AF1CE212F505ABD3E0 /* PSOLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PSOLib.modulemap; sourceTree = "<group>"; };
+		5C231B4E8850C16EADA323BB891D3913 /* PSOStandardOptimizer2011CircleTopology.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOStandardOptimizer2011CircleTopology.m; path = Pod/PSOStandardOptimizer2011CircleTopology.m; sourceTree = "<group>"; };
 		610456575627A8488EC31519CAD95680 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		62BB71A366A633315ED4C1D052D12FEE /* Pods-Lift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lift-frameworks.sh"; sourceTree = "<group>"; };
-		69F0EFE8A950E00E1B5459FA69A597D2 /* PSOStandardOptimizer2011_Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011_Subclass.h; path = Pod/PSOStandardOptimizer2011_Subclass.h; sourceTree = "<group>"; };
+		6B970A812165D54EC53288E859070FF9 /* Multiset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multiset.swift; path = Source/Multiset.swift; sourceTree = "<group>"; };
+		6C25152BFC038A04D909F1F828DEB1C9 /* PSOStandardOptimizer2011.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOStandardOptimizer2011.m; path = Pod/PSOStandardOptimizer2011.m; sourceTree = "<group>"; };
 		6D074199A84EDE538F2B8EC2239FC050 /* Pods-Lift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lift-resources.sh"; sourceTree = "<group>"; };
 		702D09D174BA7DD9C590356AE205F1AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		71EFA3533F1149C3263EC30BD0AAE395 /* PSOLib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PSOLib.modulemap; sourceTree = "<group>"; };
+		71C62FEAEEB806CA4BE88CC0F21A241D /* PSOStandardOptimizer2011_Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011_Subclass.h; path = Pod/PSOStandardOptimizer2011_Subclass.h; sourceTree = "<group>"; };
 		739933A75FA923BB68C6E07C66836105 /* Pods-Lift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7AB6C39F7AFE862C8BDF45814BECC1B3 /* PSOSearchSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOSearchSpace.h; path = Pod/PSOSearchSpace.h; sourceTree = "<group>"; };
-		7B4973A7E3F2C64E6D0B6E7A08C211E0 /* PSOAlea.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = PSOAlea.mm; path = Pod/PSOAlea.mm; sourceTree = "<group>"; };
-		8385FFCDA3BD3930A1A09DF219535296 /* PSOImmutableProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOImmutableProxy.h; path = Pod/PSOImmutableProxy.h; sourceTree = "<group>"; };
-		8391A96B98260B9E9BED07797B74C8E4 /* PSOLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PSOLib-dummy.m"; sourceTree = "<group>"; };
-		8D8595DF4E10EF4DA4BC31C0D1A21FC3 /* PSOStandardOptimizer2011CircleTopology.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011CircleTopology.h; path = Pod/PSOStandardOptimizer2011CircleTopology.h; sourceTree = "<group>"; };
+		8329181C17313F2945D236704EEDD17E /* PSORandKISS.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = PSORandKISS.mm; path = Pod/PSORandKISS.mm; sourceTree = "<group>"; };
+		860901012274A66BE1145411E39E52AC /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Source/PriorityQueue.swift; sourceTree = "<group>"; };
+		8A06F982B53C02EB9F7FA748DAE9191A /* BinaryHeap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryHeap.swift; path = Source/BinaryHeap.swift; sourceTree = "<group>"; };
+		8DD1558AFA9828A3C6CACCAC3901075C /* PSOLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PSOLib-dummy.m"; sourceTree = "<group>"; };
 		8EAABCC5D0EC128B1C26A2D5CC59FD55 /* Pods-Lift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lift-umbrella.h"; sourceTree = "<group>"; };
+		90D6B47C47E36099B4B0E41D0E4FB577 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Source/Stack.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93FFA15E5C09A2B0F7BA487F8A184224 /* PSOStandardOptimizer2011.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOStandardOptimizer2011.m; path = Pod/PSOStandardOptimizer2011.m; sourceTree = "<group>"; };
-		9EDB58D39EC6EF7BF64ABD67F93CE298 /* PSOLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOLib.h; path = Pod/PSOLib.h; sourceTree = "<group>"; };
-		A3035868CBC6B5803075CF6E8AE98E38 /* PSOFitnessCalculating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOFitnessCalculating.h; path = Pod/PSOFitnessCalculating.h; sourceTree = "<group>"; };
+		94E4F5C1FCEACC2BA694A050106AF313 /* PSOAlea.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = PSOAlea.mm; path = Pod/PSOAlea.mm; sourceTree = "<group>"; };
+		9A560727F8F94976BF980CFC0EBE2BC5 /* BloomFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BloomFilter.swift; path = Source/BloomFilter.swift; sourceTree = "<group>"; };
+		9A8BD1F2E57F4261D1C80AB714406368 /* BitArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BitArray.swift; path = Source/BitArray.swift; sourceTree = "<group>"; };
+		9BD36F1528D8C2334596B5CCA4C2EB4E /* Graph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = Source/Graph.swift; sourceTree = "<group>"; };
+		9D5511E224CFFA8684A067DD65444F18 /* Queue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Source/Queue.swift; sourceTree = "<group>"; };
+		9FBD487D5E4773B7F22DB6808FAED20E /* Deque.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deque.swift; path = Source/Deque.swift; sourceTree = "<group>"; };
 		AD9647BA204CD15A2EF67D6AAB7E4060 /* Pods-Lift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lift-acknowledgements.plist"; sourceTree = "<group>"; };
+		AFF5336F5E3C167A4E171AAC9E1EF873 /* Trie.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trie.swift; path = Source/Trie.swift; sourceTree = "<group>"; };
 		B1825D3FEBD0207547C8BE2B0E900C7E /* Pods-Lift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lift.debug.xcconfig"; sourceTree = "<group>"; };
+		B7046EC77D7C823A4CC3A8F40CB7EDD4 /* PSOLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOLib.h; path = Pod/PSOLib.h; sourceTree = "<group>"; };
+		C1D862B8441C170824530D42824342E5 /* BloomFilterTypeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BloomFilterTypeExtensions.swift; path = Source/BloomFilterTypeExtensions.swift; sourceTree = "<group>"; };
+		C29BA8F8CCC6EFB61A94E9A5D107230F /* Buckets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Buckets.framework; path = Buckets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA8E4D11AB74354B434BCE1157DA9284 /* PSOFitnessCalculating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOFitnessCalculating.h; path = Pod/PSOFitnessCalculating.h; sourceTree = "<group>"; };
+		CACB1EED2DC29A3A7C05D5E98E539C2A /* Buckets.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Buckets.xcconfig; sourceTree = "<group>"; };
+		D146ED8A55D4157591A4380967271623 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1A036DD637C4B5DE2F8B1EAF168F4DE /* Pods-Lift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lift-dummy.m"; sourceTree = "<group>"; };
-		E3F2CD7BC9E95D356F57C37689756371 /* PSOStandardOptimizer2011.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOStandardOptimizer2011.h; path = Pod/PSOStandardOptimizer2011.h; sourceTree = "<group>"; };
-		E9734187A9E7F79D9031E4B04B3B634B /* PSOLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSOLib-prefix.pch"; sourceTree = "<group>"; };
-		FCD21F156A3506DEFF23294932E1F257 /* PSOImmutableProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PSOImmutableProxy.m; path = Pod/PSOImmutableProxy.m; sourceTree = "<group>"; };
+		D5F084BD7EDF807298CE11EE3FEF5C28 /* Multimap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multimap.swift; path = Source/Multimap.swift; sourceTree = "<group>"; };
+		D5FEB97064E6E06C906EA8CC936E422F /* Buckets.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Buckets.modulemap; sourceTree = "<group>"; };
+		D90279550447F5C8D6DF2CBCB04F3BF0 /* PSOLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PSOLib.xcconfig; sourceTree = "<group>"; };
+		DE67BBAA57BC3C34F0F6D207963C9D23 /* MatrixOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatrixOperators.swift; path = Source/MatrixOperators.swift; sourceTree = "<group>"; };
+		E0BA75D47343DC785117943514D50908 /* Buckets-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Buckets-umbrella.h"; sourceTree = "<group>"; };
+		E3C02DBB148F0E6BDE25646B07D56DAC /* Buckets-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Buckets-prefix.pch"; sourceTree = "<group>"; };
+		E91F8DA7F8944F7B6029A5AF0CB7D389 /* PSOLib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSOLib-umbrella.h"; sourceTree = "<group>"; };
+		F3420CA867ACE821C4D0CE2AACE01538 /* PSOSearchSpace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PSOSearchSpace.h; path = Pod/PSOSearchSpace.h; sourceTree = "<group>"; };
+		F3977311D35F184ADB523CEEFDEEED44 /* Pods_Lift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lift.framework; path = "Pods-Lift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2E374CCEF1DAC1BFB342B9176DCCB /* Pods-Lift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Lift.modulemap"; sourceTree = "<group>"; };
 		FF105F62A44DAD779724EF8122F6BFA0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		FF2C5651462E864328333C9B22511DA3 /* BloomFilterType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BloomFilterType.swift; path = Source/BloomFilterType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		31D3499FF98399A4FA8254523400E0D2 /* Frameworks */ = {
+		A5B1BEDBD4939112F593CF80C5333D11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C15668B73E43273AC6F5AF037E7115C0 /* Foundation.framework in Frameworks */,
+				B9AB2A801D222FE32DBEBED0F21D962C /* Accelerate.framework in Frameworks */,
+				FF8C5B0F5A38F27896C9AA15EB85E8A2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6DBED4EFF2C011B426CA6DD37CE0736 /* Frameworks */ = {
+		CD9B8368E48673911C10B10C5DDD78C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2B9F9F899BC9A9BFCF2099F2C67E0E0 /* Accelerate.framework in Frameworks */,
-				A970A46FE5C89490FCFCEAD1058362C2 /* Foundation.framework in Frameworks */,
-				DC7E472EA5938E82C4EE7F4C9C883D64 /* Security.framework in Frameworks */,
+				51E7037FBE5255D557C6281908B9A0A7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0D5209B430148CF2B3CEDC3E220213 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9A0E4991C3F711F5DD92B51D35F578 /* Accelerate.framework in Frameworks */,
+				89FD984CCC891DFB943C1776BBF59B68 /* Foundation.framework in Frameworks */,
+				D562AEB930A2752A826D58B0929843DB /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E76DAE954CDF487B3E4F26E590CB86 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D146ED8A55D4157591A4380967271623 /* Info.plist */,
+				5512C252A082E1AF1CE212F505ABD3E0 /* PSOLib.modulemap */,
+				D90279550447F5C8D6DF2CBCB04F3BF0 /* PSOLib.xcconfig */,
+				8DD1558AFA9828A3C6CACCAC3901075C /* PSOLib-dummy.m */,
+				2F3BEDB08EAD38287EF09AD2019F25DB /* PSOLib-prefix.pch */,
+				E91F8DA7F8944F7B6029A5AF0CB7D389 /* PSOLib-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PSOLib";
+			sourceTree = "<group>";
+		};
+		0905B28CE4D60913E63AEA06DD7E0D5A /* Buckets */ = {
+			isa = PBXGroup;
+			children = (
+				23F2653B1C625E40EE4C4DDE58D7C955 /* Bimap.swift */,
+				8A06F982B53C02EB9F7FA748DAE9191A /* BinaryHeap.swift */,
+				9A8BD1F2E57F4261D1C80AB714406368 /* BitArray.swift */,
+				9A560727F8F94976BF980CFC0EBE2BC5 /* BloomFilter.swift */,
+				FF2C5651462E864328333C9B22511DA3 /* BloomFilterType.swift */,
+				C1D862B8441C170824530D42824342E5 /* BloomFilterTypeExtensions.swift */,
+				490B1B15FE0774F91CF7D4F65383C654 /* CircularArray.swift */,
+				9FBD487D5E4773B7F22DB6808FAED20E /* Deque.swift */,
+				216938FCD8563897FD16C9869A5FCC0A /* FNVHash.swift */,
+				9BD36F1528D8C2334596B5CCA4C2EB4E /* Graph.swift */,
+				4DFC1A2A1CDADE05FC4E1766872C1470 /* Matrix.swift */,
+				DE67BBAA57BC3C34F0F6D207963C9D23 /* MatrixOperators.swift */,
+				D5F084BD7EDF807298CE11EE3FEF5C28 /* Multimap.swift */,
+				6B970A812165D54EC53288E859070FF9 /* Multiset.swift */,
+				860901012274A66BE1145411E39E52AC /* PriorityQueue.swift */,
+				9D5511E224CFFA8684A067DD65444F18 /* Queue.swift */,
+				90D6B47C47E36099B4B0E41D0E4FB577 /* Stack.swift */,
+				AFF5336F5E3C167A4E171AAC9E1EF873 /* Trie.swift */,
+				8720994AE0B1AE71D0FB61154173706A /* Support Files */,
+			);
+			name = Buckets;
+			path = Buckets;
+			sourceTree = "<group>";
+		};
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				759E89578DC36C18D3A9C61D55DD5B5E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		183385377599C22AC4A7BC1C15CC0017 /* PSOLib */ = {
+			isa = PBXGroup;
+			children = (
+				2CC547DE6C6853874E9B29C44DD5DABE /* PSOAlea.h */,
+				94E4F5C1FCEACC2BA694A050106AF313 /* PSOAlea.mm */,
+				CA8E4D11AB74354B434BCE1157DA9284 /* PSOFitnessCalculating.h */,
+				1E22DE297FFA78DCD2AB061817B123C4 /* PSOImmutableProxy.h */,
+				17C0D4DB554B69BC931E269989DF6133 /* PSOImmutableProxy.m */,
+				B7046EC77D7C823A4CC3A8F40CB7EDD4 /* PSOLib.h */,
+				546F6AE1B3FE29B585300B3E0D1AA219 /* PSORandKISS.h */,
+				8329181C17313F2945D236704EEDD17E /* PSORandKISS.mm */,
+				F3420CA867ACE821C4D0CE2AACE01538 /* PSOSearchSpace.h */,
+				4712B485820B7B39613FACB8906D0AFB /* PSOSearchSpace.m */,
+				29B77B9C95091AB1C75A10049F32AB31 /* PSOStandardOptimizer2011.h */,
+				6C25152BFC038A04D909F1F828DEB1C9 /* PSOStandardOptimizer2011.m */,
+				71C62FEAEEB806CA4BE88CC0F21A241D /* PSOStandardOptimizer2011_Subclass.h */,
+				495B11CB36535313FDA39C06EB41DDFD /* PSOStandardOptimizer2011CircleTopology.h */,
+				5C231B4E8850C16EADA323BB891D3913 /* PSOStandardOptimizer2011CircleTopology.m */,
+				05E76DAE954CDF487B3E4F26E590CB86 /* Support Files */,
+			);
+			name = PSOLib;
+			path = PSOLib;
+			sourceTree = "<group>";
+		};
+		1B15109C111A8D981BA6068B6035BF18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0905B28CE4D60913E63AEA06DD7E0D5A /* Buckets */,
+				183385377599C22AC4A7BC1C15CC0017 /* PSOLib */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		329F83752636E856FBD8353028D61EA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C29BA8F8CCC6EFB61A94E9A5D107230F /* Buckets.framework */,
+				F3977311D35F184ADB523CEEFDEEED44 /* Pods_Lift.framework */,
+				3C77F21BB60783F7740363F922BEE96C /* PSOLib.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3B1656139EE0754E1E724B2C63D3CC6A /* Targets Support Files */ = {
@@ -128,20 +275,6 @@
 				610456575627A8488EC31519CAD95680 /* Security.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		779921BA924FCA581E244F3B1BF9DCE2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				51D48D4FC67A8D89DB290149B9768103 /* Info.plist */,
-				71EFA3533F1149C3263EC30BD0AAE395 /* PSOLib.modulemap */,
-				1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */,
-				8391A96B98260B9E9BED07797B74C8E4 /* PSOLib-dummy.m */,
-				E9734187A9E7F79D9031E4B04B3B634B /* PSOLib-prefix.pch */,
-				4C32D560D66D3D62F1102E9DB5F521FC /* PSOLib-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/PSOLib";
 			sourceTree = "<group>";
 		};
 		7A51DC9C208A638819802AC4F220DC7A /* Pods-Lift */ = {
@@ -167,91 +300,89 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				EAA9AE951E19D4745D986030C3329B56 /* Pods */,
-				DD0795BB76A370BD585AA3C84AD27E1E /* Products */,
+				1B15109C111A8D981BA6068B6035BF18 /* Pods */,
+				329F83752636E856FBD8353028D61EA9 /* Products */,
 				3B1656139EE0754E1E724B2C63D3CC6A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		99F21C37A908A1E64EFE6EE712FED6EA /* PSOLib */ = {
+		8720994AE0B1AE71D0FB61154173706A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				28FBC32AF8D1A922102682E04BB344B7 /* PSOAlea.h */,
-				7B4973A7E3F2C64E6D0B6E7A08C211E0 /* PSOAlea.mm */,
-				A3035868CBC6B5803075CF6E8AE98E38 /* PSOFitnessCalculating.h */,
-				8385FFCDA3BD3930A1A09DF219535296 /* PSOImmutableProxy.h */,
-				FCD21F156A3506DEFF23294932E1F257 /* PSOImmutableProxy.m */,
-				9EDB58D39EC6EF7BF64ABD67F93CE298 /* PSOLib.h */,
-				55F3B76893EA6318D92442562F002932 /* PSORandKISS.h */,
-				2E51AC16E240C6E9DB4F7C7D39B783B3 /* PSORandKISS.mm */,
-				7AB6C39F7AFE862C8BDF45814BECC1B3 /* PSOSearchSpace.h */,
-				41F87391332D4E5BA63C5BD802982C4D /* PSOSearchSpace.m */,
-				E3F2CD7BC9E95D356F57C37689756371 /* PSOStandardOptimizer2011.h */,
-				93FFA15E5C09A2B0F7BA487F8A184224 /* PSOStandardOptimizer2011.m */,
-				69F0EFE8A950E00E1B5459FA69A597D2 /* PSOStandardOptimizer2011_Subclass.h */,
-				8D8595DF4E10EF4DA4BC31C0D1A21FC3 /* PSOStandardOptimizer2011CircleTopology.h */,
-				560E8A590F5EC48B120C2A05F6150D85 /* PSOStandardOptimizer2011CircleTopology.m */,
-				779921BA924FCA581E244F3B1BF9DCE2 /* Support Files */,
+				D5FEB97064E6E06C906EA8CC936E422F /* Buckets.modulemap */,
+				CACB1EED2DC29A3A7C05D5E98E539C2A /* Buckets.xcconfig */,
+				23187BC092CAA6D5127FDADF3D83719E /* Buckets-dummy.m */,
+				E3C02DBB148F0E6BDE25646B07D56DAC /* Buckets-prefix.pch */,
+				E0BA75D47343DC785117943514D50908 /* Buckets-umbrella.h */,
+				13A02D453328DF5F6B0FB5D5F35BD48F /* Info.plist */,
 			);
-			name = PSOLib;
-			path = PSOLib;
-			sourceTree = "<group>";
-		};
-		DD0795BB76A370BD585AA3C84AD27E1E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				40E9A7E09A9A105491D8FC63DF7BC81A /* Pods_Lift.framework */,
-				05551F9E1E9F7F8C29A9A0ACC0B9DF54 /* PSOLib.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EAA9AE951E19D4745D986030C3329B56 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				99F21C37A908A1E64EFE6EE712FED6EA /* PSOLib */,
-			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Buckets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		10F600F1AB893144909D0497577F1442 /* Headers */ = {
+		7096B00D6830FC8A0342713FA2285E45 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CABA3511B63709E9CA9BC466786EA4E4 /* Pods-Lift-umbrella.h in Headers */,
+				8529742CA2D78BAC2CBFDC0417273B3F /* Buckets-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		244998C7BD398B1D347B81EEED4DF315 /* Headers */ = {
+		74E0614C51E6773E6285ADD041D5018F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C68BC55618D8C874DDD931164A99C207 /* PSOAlea.h in Headers */,
-				CD604C5DCCC693B4A134F7B3CB7A6408 /* PSOFitnessCalculating.h in Headers */,
-				B833D9463A611BAD71ABC06B805EE52C /* PSOImmutableProxy.h in Headers */,
-				9F335CCF5597C8806C6205CD99158B64 /* PSOLib-umbrella.h in Headers */,
-				8D67442713374AE30B44F4A64BD02D91 /* PSOLib.h in Headers */,
-				BD5826369B3D181501F6C00CBB1B304F /* PSORandKISS.h in Headers */,
-				636C58375D5E8B98D7997643E68D71C5 /* PSOSearchSpace.h in Headers */,
-				0FAB3AE30E6FF35BA7EF1605F1DB04A8 /* PSOStandardOptimizer2011.h in Headers */,
-				A745E2C1F91B05EC6116F3FDEBF5BD58 /* PSOStandardOptimizer2011_Subclass.h in Headers */,
-				6F4209D7A01E7E6D352FC6389EDE3834 /* PSOStandardOptimizer2011CircleTopology.h in Headers */,
+				3FC9E9F4D9197C3E6BBFB0B79BECC20F /* PSOAlea.h in Headers */,
+				4BD9A662C9F4573897740C5F70DAAEDA /* PSOFitnessCalculating.h in Headers */,
+				250F9EFE72E273602A8F2087EBD37A3F /* PSOImmutableProxy.h in Headers */,
+				56421FC57DAC0FA64248C7516F8B74BB /* PSOLib-umbrella.h in Headers */,
+				395F9BFA681D10E59824A2756DBFBB75 /* PSOLib.h in Headers */,
+				8CF640A3AB58BF3C59E89F4745571AE9 /* PSORandKISS.h in Headers */,
+				15D4768122F0AC8623C8C2FE792CE05B /* PSOSearchSpace.h in Headers */,
+				E21A3C7E86D9745D502709651BD2005C /* PSOStandardOptimizer2011.h in Headers */,
+				951DB43814028C89B1E5773450940D59 /* PSOStandardOptimizer2011_Subclass.h in Headers */,
+				BB87F488FAD59E8FC77BAD08BC5E7860 /* PSOStandardOptimizer2011CircleTopology.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A0D47CCC40D3167BE780E6205C98724 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859B115D84F88F62EC20A6E56CD50655 /* Pods-Lift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8F8FC510C0F8471F8080378E425D7FAA /* PSOLib */ = {
+		45607E34508B941D3A1025186A8BF029 /* Buckets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C43E2210FE2D15F5432D133DF188635 /* Build configuration list for PBXNativeTarget "PSOLib" */;
+			buildConfigurationList = 1D5B8757D65DAFA19E10C0DE1D61AEAD /* Build configuration list for PBXNativeTarget "Buckets" */;
 			buildPhases = (
-				27C202ED5DE7009731712A88FBD08D27 /* Sources */,
-				E6DBED4EFF2C011B426CA6DD37CE0736 /* Frameworks */,
-				244998C7BD398B1D347B81EEED4DF315 /* Headers */,
+				170D1582B04C54E3A50A8AE27D883374 /* Sources */,
+				A5B1BEDBD4939112F593CF80C5333D11 /* Frameworks */,
+				7096B00D6830FC8A0342713FA2285E45 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Buckets;
+			productName = Buckets;
+			productReference = C29BA8F8CCC6EFB61A94E9A5D107230F /* Buckets.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CFBBBA968F929C2BCE477FDA97EB6372 /* PSOLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6EA04AB452AFB456277890478EA067A /* Build configuration list for PBXNativeTarget "PSOLib" */;
+			buildPhases = (
+				A09FB40ECC95C11212AD5E6BDDAC57A8 /* Sources */,
+				CE0D5209B430148CF2B3CEDC3E220213 /* Frameworks */,
+				74E0614C51E6773E6285ADD041D5018F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -259,25 +390,26 @@
 			);
 			name = PSOLib;
 			productName = PSOLib;
-			productReference = 05551F9E1E9F7F8C29A9A0ACC0B9DF54 /* PSOLib.framework */;
+			productReference = 3C77F21BB60783F7740363F922BEE96C /* PSOLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F81AFB0362A3CEF9BA56F054BC0080E6 /* Pods-Lift */ = {
+		E25DDCFBB8FE1C84B35D053A99ABBA06 /* Pods-Lift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3F95FF1E7E84B466602757201925D18 /* Build configuration list for PBXNativeTarget "Pods-Lift" */;
+			buildConfigurationList = C0D5BF8877CAADD150B980934113C946 /* Build configuration list for PBXNativeTarget "Pods-Lift" */;
 			buildPhases = (
-				6048858E7ED8AF95B08258864F25478B /* Sources */,
-				31D3499FF98399A4FA8254523400E0D2 /* Frameworks */,
-				10F600F1AB893144909D0497577F1442 /* Headers */,
+				AFFA1AD29772E5B6BECA880F78438BC1 /* Sources */,
+				CD9B8368E48673911C10B10C5DDD78C0 /* Frameworks */,
+				7A0D47CCC40D3167BE780E6205C98724 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E40DFC9C6FD5B6A7A2AC84FC6BA26A98 /* PBXTargetDependency */,
+				118031C1C29AEDB76852019421A15555 /* PBXTargetDependency */,
+				AD0F14FAFCBE4BBFFAA0F4CB3BEF3E60 /* PBXTargetDependency */,
 			);
 			name = "Pods-Lift";
 			productName = "Pods-Lift";
-			productReference = 40E9A7E09A9A105491D8FC63DF7BC81A /* Pods_Lift.framework */;
+			productReference = F3977311D35F184ADB523CEEFDEEED44 /* Pods_Lift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -297,51 +429,117 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = DD0795BB76A370BD585AA3C84AD27E1E /* Products */;
+			productRefGroup = 329F83752636E856FBD8353028D61EA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F81AFB0362A3CEF9BA56F054BC0080E6 /* Pods-Lift */,
-				8F8FC510C0F8471F8080378E425D7FAA /* PSOLib */,
+				45607E34508B941D3A1025186A8BF029 /* Buckets */,
+				E25DDCFBB8FE1C84B35D053A99ABBA06 /* Pods-Lift */,
+				CFBBBA968F929C2BCE477FDA97EB6372 /* PSOLib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		27C202ED5DE7009731712A88FBD08D27 /* Sources */ = {
+		170D1582B04C54E3A50A8AE27D883374 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03CF9C1BD2572BDF8FFE699B0CB643C3 /* PSOAlea.mm in Sources */,
-				FE8510966F672BFFDA4FA1D2CDCD4D77 /* PSOImmutableProxy.m in Sources */,
-				A0F3AA2821BA026D621FF98F3167A1BC /* PSOLib-dummy.m in Sources */,
-				7625FDBF2E0568EB09103CD820D338F1 /* PSORandKISS.mm in Sources */,
-				61100FAB6FFF5F4B85A0ACC1093202FD /* PSOSearchSpace.m in Sources */,
-				6AC8E402E79797AB33C988E601868B57 /* PSOStandardOptimizer2011.m in Sources */,
-				E9DB4212C8F0048AA4E7722951E5A0AB /* PSOStandardOptimizer2011CircleTopology.m in Sources */,
+				6FC9BEC6F4CEF54A673811EB13165B62 /* Bimap.swift in Sources */,
+				50F37D2A7D439BB32157D48E95882455 /* BinaryHeap.swift in Sources */,
+				08F9860E7572199E6921088AA8E8DC8D /* BitArray.swift in Sources */,
+				BC7455113E56E1B37504EE19098BE453 /* BloomFilter.swift in Sources */,
+				F8FB529644F141C9FD99A1232B21E154 /* BloomFilterType.swift in Sources */,
+				42EFE667F70126849CBAD20445BE9F15 /* BloomFilterTypeExtensions.swift in Sources */,
+				5AD7FCF42DD982F38395BA3F43ED2296 /* Buckets-dummy.m in Sources */,
+				84DD2CE41A859113EB80D307AC82E523 /* CircularArray.swift in Sources */,
+				BC99414ACF359CD4EF6C12217F0AC801 /* Deque.swift in Sources */,
+				C120903B3E4E0BFFEAFB561C8B4B4014 /* FNVHash.swift in Sources */,
+				4DAD76E4CDC12A61E72513802D5E7496 /* Graph.swift in Sources */,
+				B5DF818C03F6CFA636FFA0C5ACBDC3C7 /* Matrix.swift in Sources */,
+				70D8FB9BE56411118C1D205616D5C856 /* MatrixOperators.swift in Sources */,
+				CEE03F6CB3278449F057ABB9E19290C1 /* Multimap.swift in Sources */,
+				5DA0EAF7FCBA665D28E4477D4DC7665F /* Multiset.swift in Sources */,
+				95DD9F1F21D84CA8BAEEDE5F8D9C32C6 /* PriorityQueue.swift in Sources */,
+				8C553EBEB6703FFBD1F873F03C7446F8 /* Queue.swift in Sources */,
+				0A3B6B1E060AA2425E269CF78470F805 /* Stack.swift in Sources */,
+				B3273BC0F08D6B0934AE22B4A7094A2A /* Trie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6048858E7ED8AF95B08258864F25478B /* Sources */ = {
+		A09FB40ECC95C11212AD5E6BDDAC57A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26BEC97280711325DFA4B4CAA1A2D2AE /* Pods-Lift-dummy.m in Sources */,
+				AAE5270B6D1ACAEA0078775C4CDDF31F /* PSOAlea.mm in Sources */,
+				EA7A8E16F5EEE6D44423D21E5E3F584E /* PSOImmutableProxy.m in Sources */,
+				218774BCA336C86EE93413883AA730F0 /* PSOLib-dummy.m in Sources */,
+				9A2D50848FA6FC655FD5567FA38EC5E2 /* PSORandKISS.mm in Sources */,
+				08DA6B025C259B430E5F92573D1A6F28 /* PSOSearchSpace.m in Sources */,
+				05362555A4A0AE9115585E428F9A17E2 /* PSOStandardOptimizer2011.m in Sources */,
+				D3CF6BCB72759D836152AA41B94C7071 /* PSOStandardOptimizer2011CircleTopology.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFFA1AD29772E5B6BECA880F78438BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				157DE1C6E35708D7BB22665039B4FCD5 /* Pods-Lift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E40DFC9C6FD5B6A7A2AC84FC6BA26A98 /* PBXTargetDependency */ = {
+		118031C1C29AEDB76852019421A15555 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Buckets;
+			target = 45607E34508B941D3A1025186A8BF029 /* Buckets */;
+			targetProxy = FF72E9A72FDA7FF1EABB9B1299FC2292 /* PBXContainerItemProxy */;
+		};
+		AD0F14FAFCBE4BBFFAA0F4CB3BEF3E60 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PSOLib;
-			target = 8F8FC510C0F8471F8080378E425D7FAA /* PSOLib */;
-			targetProxy = 0113807B7703C4B8AD09C836D3F83CEB /* PBXContainerItemProxy */;
+			target = CFBBBA968F929C2BCE477FDA97EB6372 /* PSOLib */;
+			targetProxy = 7E56509496FD749C16C9874E19049560 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		017C845D674DEBE3ED6C753BD2E57B63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CACB1EED2DC29A3A7C05D5E98E539C2A /* Buckets.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Buckets/Buckets-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Buckets/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Buckets/Buckets.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Buckets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -382,7 +580,39 @@
 			};
 			name = Release;
 		};
-		3CE486C033BD85166FCF7E5BAFF50060 /* Debug */ = {
+		6F811489AE5685CF80951D1C62ECCE95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D90279550447F5C8D6DF2CBCB04F3BF0 /* PSOLib.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PSOLib/PSOLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PSOLib/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PSOLib/PSOLib.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PSOLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9D3F48BECB2D1AB311587B07B3639A0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1825D3FEBD0207547C8BE2B0E900C7E /* Pods-Lift.debug.xcconfig */;
 			buildSettings = {
@@ -411,11 +641,79 @@
 				PRODUCT_NAME = Pods_Lift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		B249E3169F06FDACCF607D8C72CDA884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3492C98B349BBDB473EEEFBE3D07680A /* Pods-Lift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Lift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Lift/Pods-Lift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Lift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C20A9F7B6DC55A8F9FD1F70F30D8117E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D90279550447F5C8D6DF2CBCB04F3BF0 /* PSOLib.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PSOLib/PSOLib-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PSOLib/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PSOLib/PSOLib.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PSOLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		C382132BB6BF8CA1A911872A2062FD0D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -461,9 +759,9 @@
 			};
 			name = Debug;
 		};
-		CCB096B10C32FFDD08BC5568B4B8534C /* Release */ = {
+		C423B9B4C0D570CEF7A1EA5B96E5F605 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */;
+			baseConfigurationReference = CACB1EED2DC29A3A7C05D5E98E539C2A /* Buckets.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -476,14 +774,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PSOLib/PSOLib-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PSOLib/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Buckets/Buckets-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Buckets/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PSOLib/PSOLib.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Buckets/Buckets.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PSOLib;
+				PRODUCT_NAME = Buckets;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -492,77 +790,19 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		E0ABBB595A0FF5EBBD17FB310BB93271 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3492C98B349BBDB473EEEFBE3D07680A /* Pods-Lift.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Lift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Lift/Pods-Lift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Lift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FE320A3D579A8F6D03CFE1E46C325CD3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F1F99AE0D82BD64617051A293FA630C /* PSOLib.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PSOLib/PSOLib-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PSOLib/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PSOLib/PSOLib.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PSOLib;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D5B8757D65DAFA19E10C0DE1D61AEAD /* Build configuration list for PBXNativeTarget "Buckets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				017C845D674DEBE3ED6C753BD2E57B63 /* Debug */,
+				C423B9B4C0D570CEF7A1EA5B96E5F605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -572,20 +812,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C43E2210FE2D15F5432D133DF188635 /* Build configuration list for PBXNativeTarget "PSOLib" */ = {
+		C0D5BF8877CAADD150B980934113C946 /* Build configuration list for PBXNativeTarget "Pods-Lift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE320A3D579A8F6D03CFE1E46C325CD3 /* Debug */,
-				CCB096B10C32FFDD08BC5568B4B8534C /* Release */,
+				9D3F48BECB2D1AB311587B07B3639A0C /* Debug */,
+				B249E3169F06FDACCF607D8C72CDA884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3F95FF1E7E84B466602757201925D18 /* Build configuration list for PBXNativeTarget "Pods-Lift" */ = {
+		C6EA04AB452AFB456277890478EA067A /* Build configuration list for PBXNativeTarget "PSOLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3CE486C033BD85166FCF7E5BAFF50060 /* Debug */,
-				E0ABBB595A0FF5EBBD17FB310BB93271 /* Release */,
+				6F811489AE5685CF80951D1C62ECCE95 /* Debug */,
+				C20A9F7B6DC55A8F9FD1F70F30D8117E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
