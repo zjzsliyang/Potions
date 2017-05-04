@@ -88,21 +88,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         liftCurrentButton[liftIndex][i] = false
       }
     }
+    // to fix liftCurrentDirection here...
+    liftDestinationQueue[liftIndex].sorted()
   }
   
   func liftAnimation(liftIndex: Int) {
     // add animation
     scanDispatch(liftIndex: liftIndex)
     let destinationFloor = liftDestinationQueue[liftIndex].dequeue() + 1
-    print("destinationFloor: " + String(destinationFloor))
+    print("destination floor: " + String(destinationFloor))
     let destinationDistance = CGFloat(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)) * (distanceY)
-    let destinationTime = liftVelocity * Double(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex))
+    let destinationTime = liftVelocity * abs(Double(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)))
     UIView.animate(withDuration: destinationTime, delay: liftDelay, options: [], animations: {
-      print(destinationDistance)
-      self.lift[liftIndex].center.y -= destinationDistance
+      print(self.lift[liftIndex].center.y)
+      self.lift[liftIndex].center.y = self.lift[liftIndex].center.y - destinationDistance
+      print(self.lift[liftIndex].center.y)
     }, completion: { (finished) in
       self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
-      while !self.liftDestinationQueue[liftIndex].isEmpty {
+      if !self.liftDestinationQueue[liftIndex].isEmpty {
         self.liftAnimation(liftIndex: liftIndex)
       }
     })
