@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F71D0841EB7868700264A44 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71D0831EB7868700264A44 /* Dispatch.swift */; };
 		2F91DE441EADD9450041915F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91DE431EADD9450041915F /* AppDelegate.swift */; };
 		2F91DE461EADD9450041915F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91DE451EADD9450041915F /* ViewController.swift */; };
 		2F91DE491EADD9450041915F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91DE471EADD9450041915F /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		1471743EDE48CF43FED077B5 /* Pods-Lift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lift/Pods-Lift.release.xcconfig"; sourceTree = "<group>"; };
-		2F71D0831EB7868700264A44 /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		2F91DE401EADD9450041915F /* Lift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F91DE431EADD9450041915F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F91DE451EADD9450041915F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			children = (
 				2F91DE431EADD9450041915F /* AppDelegate.swift */,
 				2F91DE451EADD9450041915F /* ViewController.swift */,
-				2F71D0831EB7868700264A44 /* Dispatch.swift */,
 				2F91DE471EADD9450041915F /* Main.storyboard */,
 				2F91DE4A1EADD9450041915F /* Assets.xcassets */,
 				2F91DE4C1EADD9450041915F /* LaunchScreen.storyboard */,
@@ -233,7 +230,6 @@
 			files = (
 				2F91DE461EADD9450041915F /* ViewController.swift in Sources */,
 				2F91DE441EADD9450041915F /* AppDelegate.swift in Sources */,
-				2F71D0841EB7868700264A44 /* Dispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

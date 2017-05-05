@@ -34,3 +34,54 @@ a destination dispatch iOS app for multi-elevator
   - 界面
   - 算法
   - 可行性
+
+------
+
+Draft:
+
+### Fitness Func
+
+$S_i = w_1S_{AWTi} + w_2S_{ARTi}+w_3S_{PRCi}$
+
+![Screen Shot 2017-05-05 at 5.59.45 PM](/Users/Yang/Desktop/Screen Shot 2017-05-05 at 5.59.45 PM.png)
+
+$AWT=\frac{\sum_{i=1}^{N_p}{T_w(i)}}{N_p}$
+
+![Screen Shot 2017-05-05 at 6.19.22 PM](/Users/Yang/Desktop/Screen Shot 2017-05-05 at 6.19.22 PM.png)
+
+$ART = \frac{\sum_{i=1}^{N_p}{T_r(i)}}{N_p}$
+
+
+
+### 常量表
+
+|               |                                  |             |
+| ------------- | -------------------------------- | ----------- |
+| $K_1$         | $1.5$ Seconds                    | 电梯运行一层所需时间  |
+| $K_2$         | $3$ Seconds                      | 电梯停靠一层所需时间  |
+| $m$           | ``liftDestinationDeque[].count`` | 电梯需响应的停靠任务数 |
+| $F_c$ & $D_c$ | ``Queue<Int>``                   | 呼叫发生楼层 & 方向 |
+| $F_{max}$     |                                  | 电梯同向最远楼层    |
+| $F_{min}$     |                                  | 电梯反向最远楼层    |
+| $N_p$         |                                  | 电梯系统内总乘客数   |
+
+
+
+### 符号表
+
+|                           |                                    |                |
+| ------------------------- | ---------------------------------- | -------------- |
+| `` liftRequestQueue``     | ``Queue<Int>``                     | 总体呼梯信号[-20,20] |
+| `` liftDestinationDeque`` | `` Array<Deque<Int>>``             | 电梯当前目标楼层队列     |
+| `` liftCurrentDirection`` | ``Array<Int>``                     | 电梯当前方向{-1,0,1} |
+| ``positions``             | `` UnsafeMutablePointer<Double>?`` | 派梯方案           |
+|                           |                                    |                |
+|                           |                                    |                |
+|                           |                                    |                |
+|                           |                                    |                |
+|                           |                                    |                |
+
+
+
+
+

@@ -30,9 +30,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   var liftDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
   var liftRequestQueue = Queue<Int>()
   
-  var sAWT: [Double] = Array(repeating: 0, count: 5)
-  var sART: [Double] = Array(repeating: 0, count: 5)
-  var sRPC: [Double] = Array(repeating: 0, count: 5)
+//  var sAWT: [Double] = Array(repeating: 0, count: 5)
+//  var sART: [Double] = Array(repeating: 0, count: 5)
+//  var sRPC: [Double] = Array(repeating: 0, count: 5)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -100,30 +100,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
     for i in 0..<liftCount {
       if liftBeingSet[i] {
-        // how to start animation
         print("current lift: " + String(i))
-        liftAnimation(liftIndex: i)
+        inLiftScan(liftIndex: i)
         liftBeingSet[i] = false
       }
     }
   }
   
-  func scanDispatch(liftIndex: Int) {
+  func inLiftScan(liftIndex: Int) {
     for i in 0..<floorCount {
       if liftCurrentButton[liftIndex][i] {
         liftDestinationDeque[liftIndex].enqueueFirst(i)
         liftCurrentButton[liftIndex][i] = false
       }
     }
-    // to fix liftCurrentDirection here...
     _ = liftDestinationDeque[liftIndex].sorted()
-    
-    
+    liftAnimation(liftIndex: liftIndex)
   }
   
   func randomGenerateDestination(destinationTag: Int) -> Int {
     if destinationTag < 0 {
-      return Int(arc4random() % UInt32(abs(destinationTag) + 2)) + 1
+      return Int(arc4random() % UInt32(abs(destinationTag + 1))) + 1
     } else {
       return floorCount - Int(arc4random() % UInt32(floorCount - destinationTag))
     }
@@ -148,26 +145,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     return
   }
 
-  func nativeDispatch() {
+  func naiveDispatch() {
     if liftRequestQueue.isEmpty {
       return
     }
     let currentRequest = liftRequestQueue.dequeue()
+    print(currentRequest)
     if currentRequest < 0 {
       var closestLiftDistance = 20
       var closestLift = -1
       for i in 0..<liftCount {
         if liftCurrentDirection[i] <= 0 {
-          if closestLiftDistance > getLiftCurrentFloor(liftIndex: i) {
+          if closestLiftDistance > abs(getLiftCurrentFloor(liftIndex: i) + currentRequest) {
             closestLift = i
-            closestLiftDistance = getLiftCurrentFloor(liftIndex: i)
+            closestLiftDistance = abs(getLiftCurrentFloor(liftIndex: i) + currentRequest)
           }
         }
       }
       if closestLift != -1 {
-        liftDestinationDeque[closestLift].enqueueFirst(currentRequest)
-        liftDestinationDeque[closestLift].enqueueFirst(randomGenerateDestination(destinationTag: currentRequest))
-        liftDestinationDeque[closestLift].sorted()
+        liftDestinationDeque[closestLift].enqueueFirst(-currentRequest - 1)
+        _ = liftDestinationDeque[closestLift].sorted()
+        liftDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
         return
       } else {
         liftRequestQueue.enqueue(currentRequest)
@@ -177,16 +175,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       var closestLift = -1
       for j in 0..<liftCount {
         if liftCurrentDirection[j] >= 0 {
-          if closestLiftDistance > getLiftCurrentFloor(liftIndex: j) {
+          if closestLiftDistance > abs(getLiftCurrentFloor(liftIndex: j) - currentRequest) {
             closestLift = j
-            closestLiftDistance = getLiftCurrentFloor(liftIndex: j)
+            closestLiftDistance = abs(getLiftCurrentFloor(liftIndex: j) - currentRequest)
           }
         }
       }
       if closestLift != -1 {
-        liftDestinationDeque[closestLift].enqueueFirst(currentRequest)
-        liftDestinationDeque[closestLift].enqueueFirst(randomGenerateDestination(destinationTag: currentRequest))
-        liftDestinationDeque[closestLift].sorted()
+        liftDestinationDeque[closestLift].enqueueFirst(currentRequest - 1)
+        _ = liftDestinationDeque[closestLift].sorted()
+        liftDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
         return
       } else {
         liftRequestQueue.enqueue(currentRequest)
@@ -236,13 +234,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   */
  
   func liftAnimation(liftIndex: Int) {
-    scanDispatch(liftIndex: liftIndex)
     if liftDestinationDeque[liftIndex].isEmpty {
       return
     }
     var destinationFloor: Int = 0
     if liftCurrentDirection[liftIndex] == 0 {
       let currentFloor = getLiftCurrentFloor(liftIndex: liftIndex)
+
       if abs(currentFloor - (liftDestinationDeque[liftIndex].first! + 1)) < abs(currentFloor - (liftDestinationDeque[liftIndex].last! + 1)) {
         destinationFloor = liftDestinationDeque[liftIndex].dequeueFirst() + 1
       } else {
@@ -269,7 +267,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     })
   }
   
-  func updateUpDownButton(destinationTag: Int) { 
+  func updateUpDownButton(destinationTag: Int) {
+    if destinationTag == 0 {
+      return
+    }
     if destinationTag > 0 {
       if upDownButton[destinationTag - 1][0].isSelected {
         upDownButton[destinationTag - 1][0].isSelected = false
@@ -386,9 +387,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     sender.isSelected = !sender.isSelected
     if sender.isSelected {
       liftRequestQueue.enqueue(sender.tag)
-    } else {
-      // to do 
-      // cancel the
+      naiveDispatch()
+      for i in 0..<liftCount {
+        liftAnimation(liftIndex: i)
+      }
     }
   }
 }
