@@ -269,8 +269,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
-    print(destinationTag)
+    print("destinationTag: " + String(destinationTag))
     if destinationTag == 0 {
+      if !liftRandomDestinationDeque[liftIndex].isEmpty {
+        liftDestinationDeque[liftIndex].enqueueFirst(liftRandomDestinationDeque[liftIndex].dequeueFirst())
+        upDownButton[getLiftCurrentFloor(liftIndex: liftIndex) - 1][0].isSelected = false
+      }
       return
     }
     if destinationTag > 0 {
