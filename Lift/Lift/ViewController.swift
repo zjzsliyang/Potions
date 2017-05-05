@@ -28,6 +28,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   var liftCurrentDirection: [Int] = Array(repeating: 0, count: 5)  // 0 represents static, 1 represents Up Direction, -1 represents Down Direction
   var liftBeingSet: [Bool] = Array(repeating: false, count: 5)
   var liftDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
+  var liftRandomDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
   var liftRequestQueue = Queue<Int>()
   
 //  var sAWT: [Double] = Array(repeating: 0, count: 5)
@@ -150,7 +151,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       return
     }
     let currentRequest = liftRequestQueue.dequeue()
-    print(currentRequest)
+    print("currentRequest: " + String(currentRequest))
     if currentRequest < 0 {
       var closestLiftDistance = 20
       var closestLift = -1
@@ -165,7 +166,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       if closestLift != -1 {
         liftDestinationDeque[closestLift].enqueueFirst(-currentRequest - 1)
         _ = liftDestinationDeque[closestLift].sorted()
-        liftDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
+        liftRandomDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
         return
       } else {
         liftRequestQueue.enqueue(currentRequest)
@@ -184,7 +185,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       if closestLift != -1 {
         liftDestinationDeque[closestLift].enqueueFirst(currentRequest - 1)
         _ = liftDestinationDeque[closestLift].sorted()
-        liftDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
+        liftRandomDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
         return
       } else {
         liftRequestQueue.enqueue(currentRequest)
@@ -260,14 +261,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       self.lift[liftIndex].center.y = self.lift[liftIndex].center.y - destinationDistance
     }, completion: { (finished) in
       self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
-      self.updateUpDownButton(destinationTag: (self.liftCurrentDirection[liftIndex] * destinationFloor))
+      self.updateUpDownButton(destinationTag: (self.liftCurrentDirection[liftIndex] * destinationFloor), liftIndex: liftIndex)
       if !self.liftDestinationDeque[liftIndex].isEmpty {
         self.liftAnimation(liftIndex: liftIndex)
       }
     })
   }
   
-  func updateUpDownButton(destinationTag: Int) {
+  func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
+    print(destinationTag)
     if destinationTag == 0 {
       return
     }
@@ -279,6 +281,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       if upDownButton[-destinationTag - 1][1].isSelected {
         upDownButton[-destinationTag - 1][1].isSelected = false
       }
+    }
+    if !liftRandomDestinationDeque[liftIndex].isEmpty {
+      liftDestinationDeque[liftIndex].enqueueFirst(liftRandomDestinationDeque[liftIndex].dequeueFirst())
+      upDownButton[abs(destinationTag) - 1][0].isSelected = false
+      upDownButton[abs(destinationTag) - 1][1].isSelected = false
     }
   }
   
@@ -381,6 +388,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       upDownButton.append(upDownButtonUnit)
       upDownButtonY = upDownButtonY - distanceY
     }
+    upDownButton[0][1].isEnabled = false
+    upDownButton[19][0].isEnabled = false
   }
   
   func buttonTapped(sender: UIButton) {
