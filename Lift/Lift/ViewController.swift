@@ -23,10 +23,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   var upDownButton = [[UIButton]]()
   var liftDisplay = [UILabel]()
   var lift = [UIView]()
+  var liftCurrentPosition: [CGFloat] = Array(repeating: 1290.0, count: 5)
   var liftCurrentButton: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 5)
   var liftCurrentDirection: [Int] = Array(repeating: 0, count: 5)  // 0 represents static, 1 represents Up Direction, -1 represents Down Direction
   var liftBeingSet: [Bool] = Array(repeating: false, count: 5)
-  var liftDestinationQueue = Array(repeating: Queue<Int>(), count: 5)
+  var liftDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
+  var liftRequestQueue = Queue<Int>()
+  
+  var sAWT: [Double] = Array(repeating: 0, count: 5)
+  var sART: [Double] = Array(repeating: 0, count: 5)
+  var sRPC: [Double] = Array(repeating: 0, count: 5)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,9 +45,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
+    let deviceModelName = UIDevice.current.modelName
+    if deviceModelName != "iPad Pro 12.9" {
+      let alertController = UIAlertController(title: "CAUTION", message: "This app can only run on the\n 12.9-inch iPad Pro", preferredStyle: .alert)
+      let alertActionOk = UIAlertAction(title: "OK", style: .default, handler: nil)
+      alertController.addAction(alertActionOk)
+      present(alertController, animated: true, completion: nil)
+    }
+    
     let timer = Timer(timeInterval: 0.1, repeats: true) { (timer) in
       for i in 0..<self.liftCount {
         self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: i), liftIndex: i)
+        self.updateCurrentDirection(liftIndex: i)
       }
     }
     RunLoop.current.add(timer, forMode: .commonModes)
@@ -96,44 +111,186 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   func scanDispatch(liftIndex: Int) {
     for i in 0..<floorCount {
       if liftCurrentButton[liftIndex][i] {
-        liftDestinationQueue[liftIndex].enqueue(i)
+        liftDestinationDeque[liftIndex].enqueueFirst(i)
         liftCurrentButton[liftIndex][i] = false
       }
     }
     // to fix liftCurrentDirection here...
-    liftDestinationQueue[liftIndex].sorted()
+    _ = liftDestinationDeque[liftIndex].sorted()
+    
+    
   }
   
-  func liftAnimation(liftIndex: Int) {
-    scanDispatch(liftIndex: liftIndex)
-    if liftDestinationQueue[liftIndex].isEmpty {
+  func randomGenerateDestination(destinationTag: Int) -> Int {
+    if destinationTag < 0 {
+      return Int(arc4random() % UInt32(abs(destinationTag) + 2)) + 1
+    } else {
+      return floorCount - Int(arc4random() % UInt32(floorCount - destinationTag))
+    }
+  }
+  
+  func updateCurrentDirection(liftIndex: Int) {
+    if lift[liftIndex].layer.presentation()?.position == nil {
+      liftCurrentDirection[liftIndex] = 0
       return
     }
-    let destinationFloor = liftDestinationQueue[liftIndex].dequeue() + 1
+    let currentPresentationY = lift[liftIndex].layer.presentation()?.frame.minY
+    if currentPresentationY! < liftCurrentPosition[liftIndex] {
+      liftCurrentDirection[liftIndex] = 1
+    }
+    if currentPresentationY! > liftCurrentPosition[liftIndex] {
+      liftCurrentDirection[liftIndex] = -1
+    }
+    if currentPresentationY! == liftCurrentPosition[liftIndex] {
+      liftCurrentDirection[liftIndex] = 0
+    }
+    liftCurrentPosition[liftIndex] = currentPresentationY!
+    return
+  }
+
+  func nativeDispatch() {
+    if liftRequestQueue.isEmpty {
+      return
+    }
+    let currentRequest = liftRequestQueue.dequeue()
+    if currentRequest < 0 {
+      var closestLiftDistance = 20
+      var closestLift = -1
+      for i in 0..<liftCount {
+        if liftCurrentDirection[i] <= 0 {
+          if closestLiftDistance > getLiftCurrentFloor(liftIndex: i) {
+            closestLift = i
+            closestLiftDistance = getLiftCurrentFloor(liftIndex: i)
+          }
+        }
+      }
+      if closestLift != -1 {
+        liftDestinationDeque[closestLift].enqueueFirst(currentRequest)
+        liftDestinationDeque[closestLift].enqueueFirst(randomGenerateDestination(destinationTag: currentRequest))
+        liftDestinationDeque[closestLift].sorted()
+        return
+      } else {
+        liftRequestQueue.enqueue(currentRequest)
+      }
+    } else {
+      var closestLiftDistance = 20
+      var closestLift = -1
+      for j in 0..<liftCount {
+        if liftCurrentDirection[j] >= 0 {
+          if closestLiftDistance > getLiftCurrentFloor(liftIndex: j) {
+            closestLift = j
+            closestLiftDistance = getLiftCurrentFloor(liftIndex: j)
+          }
+        }
+      }
+      if closestLift != -1 {
+        liftDestinationDeque[closestLift].enqueueFirst(currentRequest)
+        liftDestinationDeque[closestLift].enqueueFirst(randomGenerateDestination(destinationTag: currentRequest))
+        liftDestinationDeque[closestLift].sorted()
+        return
+      } else {
+        liftRequestQueue.enqueue(currentRequest)
+      }
+    }
+  }
+  
+  /*
+  func SPODispatch() {
+    let spaceMin: [Int] = Array(repeating: 0, count: liftRequestQueue.count)
+    let spaceMax: [Int] = Array(repeating: 5, count: liftRequestQueue.count)
+    let searchSpace = PSOSearchSpace(boundsMin: spaceMin, max: spaceMax)
+    let optimizer = PSOStandardOptimizer2011(for: searchSpace, optimum: 0, fitness: { (positions: UnsafeMutablePointer<Double>?, dimensions: Int32) -> Double in
+      // AWT: Average Waiting Time
+      var liftTempDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
+      var fMax: [Int] = Array(repeating: 0, count: self.liftCount)
+      var fMin: [Int] = Array(repeating: 0, count: self.liftCount)
+      for i in 0..<self.liftRequestQueue.count {
+        switch Int((positions?[i])!) {
+        case 0:
+          liftTempDestinationDeque[0].enqueueFirst(self.liftRequestQueue.dequeue())
+          self.liftRequestQueue.enqueue(liftTempDestinationDeque[0].first!)
+        case 1:
+          liftTempDestinationDeque[1].enqueueFirst(self.liftRequestQueue.dequeue())
+          self.liftRequestQueue.enqueue(liftTempDestinationDeque[1].first!)
+        case 2:
+          liftTempDestinationDeque[2].enqueueFirst(self.liftRequestQueue.dequeue())
+          self.liftRequestQueue.enqueue(liftTempDestinationDeque[2].first!)
+        case 3:
+          liftTempDestinationDeque[3].enqueueFirst(self.liftRequestQueue.dequeue())
+          self.liftRequestQueue.enqueue(liftTempDestinationDeque[3].first!)
+        default:
+          liftTempDestinationDeque[4].enqueueFirst(self.liftRequestQueue.dequeue())
+          self.liftRequestQueue.enqueue(liftTempDestinationDeque[4].first!)
+        }
+      }
+      // ART: Average Riding Time
+      // RPC: Per Energy Consumption
+      // Total
+      var sFitnessFunc: Double = 0
+      return sFitnessFunc
+    }, before: nil, iteration: nil) { (optimizer: PSOStandardOptimizer2011?) in
+      // to do
+    }
+    optimizer?.operation.start()
+  }
+  */
+ 
+  func liftAnimation(liftIndex: Int) {
+    scanDispatch(liftIndex: liftIndex)
+    if liftDestinationDeque[liftIndex].isEmpty {
+      return
+    }
+    var destinationFloor: Int = 0
+    if liftCurrentDirection[liftIndex] == 0 {
+      let currentFloor = getLiftCurrentFloor(liftIndex: liftIndex)
+      if abs(currentFloor - (liftDestinationDeque[liftIndex].first! + 1)) < abs(currentFloor - (liftDestinationDeque[liftIndex].last! + 1)) {
+        destinationFloor = liftDestinationDeque[liftIndex].dequeueFirst() + 1
+      } else {
+        destinationFloor = liftDestinationDeque[liftIndex].dequeueLast() + 1
+      }
+    } else {
+      if liftCurrentDirection[liftIndex] > 0 {
+        destinationFloor = liftDestinationDeque[liftIndex].dequeueLast() + 1
+      } else {
+        destinationFloor = liftDestinationDeque[liftIndex].dequeueFirst() + 1
+      }
+    }
     print("destination floor: " + String(destinationFloor))
     let destinationDistance = CGFloat(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)) * (distanceY)
     let destinationTime = liftVelocity * abs(Double(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)))
     UIView.animate(withDuration: destinationTime, delay: liftDelay, options: .curveEaseInOut, animations: {
       self.lift[liftIndex].center.y = self.lift[liftIndex].center.y - destinationDistance
     }, completion: { (finished) in
-//      self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
-      if !self.liftDestinationQueue[liftIndex].isEmpty {
+      self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
+      self.updateUpDownButton(destinationTag: (self.liftCurrentDirection[liftIndex] * destinationFloor))
+      if !self.liftDestinationDeque[liftIndex].isEmpty {
         self.liftAnimation(liftIndex: liftIndex)
       }
     })
+  }
+  
+  func updateUpDownButton(destinationTag: Int) { 
+    if destinationTag > 0 {
+      if upDownButton[destinationTag - 1][0].isSelected {
+        upDownButton[destinationTag - 1][0].isSelected = false
+      }
+    } else {
+      if upDownButton[-destinationTag - 1][1].isSelected {
+        upDownButton[-destinationTag - 1][1].isSelected = false
+      }
+    }
   }
   
   func getLiftCurrentFloor(liftIndex: Int) -> Int {
     if lift[liftIndex].layer.presentation()?.position != nil {
       return (Int(floor((1290 - (lift[liftIndex].layer.presentation()!.frame.minY)) / distanceY)) + 1)
     } else {
-      print("returning model position")
+      print("returning model layer position")
       return (Int(floor((1290 - (lift[liftIndex].layer.model().frame.minY)) / distanceY)) + 1)
     }
   }
   
   func updateLiftDisplay(currentFloor: Int, liftIndex: Int) {
-    // how to update liftDisplay
     liftDisplay[liftIndex].text = String(currentFloor)
   }
 
@@ -204,15 +361,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   
   func initUpDownButton() {
     var upDownButtonY: CGFloat = 1305
-    for _ in 0..<floorCount {
+    for i in 0..<floorCount {
       var upDownButtonUnit = [UIButton]()
       let upDownButtonUp = UIButton(frame: CGRect(x: 90, y: upDownButtonY, width: 25, height: 25))
       upDownButtonUp.setImage(UIImage(named: "up"), for: .normal)
       upDownButtonUp.setImage(UIImage(named: "up-active"), for: .selected)
+      upDownButtonUp.tag = i + 1
       upDownButtonUp.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
       let upDownButtonDown = UIButton(frame: CGRect(x: 130, y: upDownButtonY, width: 25, height: 25))
       upDownButtonDown.setImage(UIImage(named: "down"), for: .normal)
       upDownButtonDown.setImage(UIImage(named: "down-active"), for: .selected)
+      upDownButtonDown.tag = -(i + 1)
       upDownButtonDown.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
       upDownButtonUnit.append(upDownButtonUp)
       upDownButtonUnit.append(upDownButtonDown)
@@ -225,6 +384,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   
   func buttonTapped(sender: UIButton) {
     sender.isSelected = !sender.isSelected
+    if sender.isSelected {
+      liftRequestQueue.enqueue(sender.tag)
+    } else {
+      // to do 
+      // cancel the
+    }
   }
 }
 
@@ -251,6 +416,23 @@ extension Character {
     get {
       let unicodeString = String(self).unicodeScalars
       return Int(unicodeString[unicodeString.startIndex].value)
+    }
+  }
+}
+
+public extension UIDevice {
+  var modelName: String {
+    var systemInfo = utsname()
+    uname(&systemInfo)
+    let machineMirror = Mirror(reflecting: systemInfo.machine)
+    let identifier = machineMirror.children.reduce("") { identifier, element in
+      guard let value = element.value as? Int8, value != 0 else { return identifier }
+      return identifier + String(UnicodeScalar(UInt8(value)))
+    }
+    switch identifier {
+      case "iPad6,7", "iPad6,8":                      return "iPad Pro 12.9"
+      case "i386", "x86_64":                          return "Simulator"
+      default:                                        return identifier
     }
   }
 }
