@@ -24,7 +24,9 @@ a destination dispatch iOS app for multi-elevator
 
 启动App后，您可以选择在左侧的每层楼中给出上楼和下楼的指令，电梯会根据SCAN调度算法响应，并随机生成一个更高／更低楼层作为您的目的地。您也可以手动点击电梯，在弹出来的``popoverView``中选择目的楼层。
 
-基于粒子群优化算法的实时调度和自动生成指令等功能仍在编写中，同时由于时间紧迫，并没有良好的封装。
+此外，还提供了随机生成乘客指令的功能，您只需打开右上角的自动模式开关。
+
+基于粒子群优化算法的实时调度功能仍在编写中，同时由于时间紧迫，并没有良好的封装。
 
 如果您的markdown阅读器不支持$LaTeX$，您可以选择[html](README.html)获得更好的阅读体验。
 
@@ -200,6 +202,7 @@ a destination dispatch iOS app for multi-elevator
 |    ``liftDestinationDeque``    | ``[Deque<Int>]`` |            每个电梯的目标楼层队列            |
 | ``liftRandomDestinationDeque`` | ``[Deque<Int>]`` |           根据指令随机生成的目标队列           |
 |      ``liftRequestQueue``      |  ``Queue<Int>``  |           总调度系统中未被分配的指令           |
+|      `` liftInAnimation``      |    ``[Int]``     |            当前电梯是否在实行动画            |
 
 由于实时更新电梯层数在主线程会阻塞UI，在新开的线程中造成与主线程不同步的情况，这里使用定时器`Timer`解决。
 
@@ -305,6 +308,7 @@ func liftAnimation(liftIndex: Int) {
   if liftDestinationDeque[liftIndex].isEmpty {
     return
   }
+  liftInAnimation[liftIndex] = liftInAnimation[liftIndex] + 1
   var destinationFloor: Int = 0
   if liftCurrentDirection[liftIndex] == 0 {
     let currentFloor = getLiftCurrentFloor(liftIndex: liftIndex)
@@ -332,6 +336,7 @@ func liftAnimation(liftIndex: Int) {
     if !self.liftDestinationDeque[liftIndex].isEmpty {
       self.liftAnimation(liftIndex: liftIndex)
     }
+    self.liftInAnimation[liftIndex] = self.liftInAnimation[liftIndex] - 1
   })
 }
 ```
@@ -368,7 +373,7 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 
 ### Video
 
-[YouTube](https://youtu.be/7w8Dd7QVSeY) or [locally](Lift.mp4)
+[YouTube](https://youtu.be/iSkEq7rmBbU) or [locally](Lift.mp4)
 
 ### Screenshot
 
@@ -383,7 +388,6 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 ### Under Construction
 
 - [ ] PSO Algorithms
-- [ ] Auto Generation
 - [ ] Refactor the Project with MVC
 
 ###  License

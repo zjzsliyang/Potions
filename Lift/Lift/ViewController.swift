@@ -30,10 +30,31 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   var liftDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
   var liftRandomDestinationDeque = Array(repeating: Deque<Int>(), count: 5)
   var liftRequestQueue = Queue<Int>()
+  var liftInAnimation: [Int] = Array(repeating: 0, count: 5)
   
 //  var sAWT: [Double] = Array(repeating: 0, count: 5)
 //  var sART: [Double] = Array(repeating: 0, count: 5)
 //  var sRPC: [Double] = Array(repeating: 0, count: 5)
+  
+  @IBAction func modeChosen(_ sender: UISwitch) {
+    weak var weakSelf = self
+    var fucktimer = Timer()
+    if sender.isOn {
+      fucktimer = Timer(timeInterval: 1, repeats: true) { (fucktimer) in
+        let randomFloor = Int(arc4random() % UInt32((weakSelf?.floorCount)!))
+        let randomDirection = Int(arc4random() % 2)
+        if (!(weakSelf?.upDownButton[randomFloor][randomDirection].isSelected)!) && (weakSelf?.upDownButton[randomFloor][randomDirection].isEnabled)! {
+          weakSelf?.buttonTapped(sender: self.upDownButton[randomFloor][randomDirection])
+        }
+      }
+      RunLoop.current.add(fucktimer, forMode: .defaultRunLoopMode)
+      fucktimer.fire()
+    } else {
+      if (fucktimer.isValid) {
+        fucktimer.invalidate()
+      }
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -151,7 +172,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       return
     }
     let currentRequest = liftRequestQueue.dequeue()
-    print("currentRequest: " + String(currentRequest))
+    print("current Request: " + String(currentRequest))
     if currentRequest < 0 {
       var closestLiftDistance = 20
       var closestLift = -1
@@ -238,6 +259,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     if liftDestinationDeque[liftIndex].isEmpty {
       return
     }
+    liftInAnimation[liftIndex] = liftInAnimation[liftIndex] + 1
     var destinationFloor: Int = 0
     if liftCurrentDirection[liftIndex] == 0 {
       let currentFloor = getLiftCurrentFloor(liftIndex: liftIndex)
@@ -265,6 +287,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       if !self.liftDestinationDeque[liftIndex].isEmpty {
         self.liftAnimation(liftIndex: liftIndex)
       }
+      self.liftInAnimation[liftIndex] = self.liftInAnimation[liftIndex] - 1
     })
   }
   
@@ -403,7 +426,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       liftRequestQueue.enqueue(sender.tag)
       naiveDispatch()
       for i in 0..<liftCount {
-        liftAnimation(liftIndex: i)
+        if liftInAnimation[i] == 0 {
+          liftAnimation(liftIndex: i)
+        }
       }
     }
   }
