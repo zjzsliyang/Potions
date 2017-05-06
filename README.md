@@ -24,7 +24,7 @@ a destination dispatch iOS app for multi-elevator
 
 启动App后，您可以选择在左侧的每层楼中给出上楼和下楼的指令，电梯会根据SCAN调度算法响应，并随机生成一个更高／更低楼层作为您的目的地。您也可以手动点击电梯，在弹出来的``popoverView``中选择目的楼层。
 
-基于粒子群优化算法的实时调度和自动生成指令等功能仍在编写中。
+基于粒子群优化算法的实时调度和自动生成指令等功能仍在编写中，同时由于时间紧迫，并没有良好的封装。
 
 如果您的markdown阅读器不支持$LaTeX$，您可以选择[html](README.html)获得更好的阅读体验。
 
@@ -168,7 +168,7 @@ a destination dispatch iOS app for multi-elevator
 
 ### Architecture
 
-为了考虑到两种算法的兼容，本项目数据结构的处理较为复杂。
+考虑到两种算法的兼容，本项目数据结构的处理较为复杂。
 
 **基本常量的处理**：
 
@@ -368,7 +368,7 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 
 ### Video
 
-[YouTube](https://youtu.be/7w8Dd7QVSeY) or [local](Lift.mp4)
+[YouTube](https://youtu.be/7w8Dd7QVSeY) or [locally](Lift.mp4)
 
 ### Screenshot
 
@@ -384,6 +384,7 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 
 - [ ] PSO Algorithms
 - [ ] Auto Generation
+- [ ] Refactor the Project with MVC
 
 ###  License
 
