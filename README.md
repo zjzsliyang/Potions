@@ -214,7 +214,7 @@ RunLoop.current.add(timer, forMode: .commonModes)
 timer.fire()
 ```
 
-在每次用户dismiss popoverview时进行电梯内按钮是否按下的检查，将被按下的层数加入该电梯的目标楼层队列。
+在每次用户dismiss ``popoverview``时进行电梯内按钮是否按下的检查，将被按下的层数加入该电梯的目标楼层队列。
 
 ```swift
 func inLiftScan(liftIndex: Int) {
@@ -368,7 +368,7 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 
 ### Video
 
-[YouTube](https://youtu.be/7w8Dd7QVSeY) or local
+[YouTube](https://youtu.be/7w8Dd7QVSeY) or [local](Lift.mp4)
 
 ### Screenshot
 
