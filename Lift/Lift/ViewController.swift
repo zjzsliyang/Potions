@@ -274,6 +274,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       if !liftRandomDestinationDeque[liftIndex].isEmpty {
         liftDestinationDeque[liftIndex].enqueueFirst(liftRandomDestinationDeque[liftIndex].dequeueFirst())
         upDownButton[getLiftCurrentFloor(liftIndex: liftIndex) - 1][0].isSelected = false
+        upDownButton[getLiftCurrentFloor(liftIndex: liftIndex) - 1][1].isSelected = false
       }
       return
     }
