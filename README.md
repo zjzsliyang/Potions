@@ -243,7 +243,9 @@ func randomGenerateDestination(destinationTag: Int) -> Int {
 
 **朴素的调度算法**：
 
-这里使用LOOK算法，
+这里使用LOOK算法，对于每一个指令，寻找与其同向或静止的最近的电梯进行响应。
+
+针对电梯先上去接人后再下行的情况，为了避免电梯由于对目标楼层队列排序后先去随机生成的目标楼层而没有接人，通过设置一个``liftRandomDestinationDeque``队列进行临时存储，在电梯接人后再``enqueue``进目标楼层队列``liftDestinationDeque``。
 
 ```swift
 func naiveDispatch() {
@@ -366,15 +368,15 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 
 ### Video
 
-[YouTube]() or local
+[YouTube](https://youtu.be/7w8Dd7QVSeY) or local
 
 ### Screenshot
 
-Static:
+*Static:*
 
 ![Screenshot](Res/Screenshot1.PNG)
 
-Dynamic:
+*Dynamic:*
 
 ![Screenshot](Res/Screenshot2.PNG)
 
