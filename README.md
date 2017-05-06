@@ -68,11 +68,17 @@ a destination dispatch iOS app for multi-elevator
 
 ##### 符号说明
 
-|      |      |      |
-| ---- | ---- | ---- |
-|      |      |      |
-|      |      |      |
-|      |      |      |
+|    符号     |     数据结构     |       说明       |
+| :-------: | :----------: | :------------: |
+| $T_w(i)$  | ``[Double]`` | 第$i$个乘客的实际候梯时间 |
+| $T_r(i)$  | ``[Double]`` | 第$i$个乘客的实际乘梯时间 |
+|   $K_1$   |   ``Int``    |   电梯运行一层所需时间   |
+|   $K_2$   |   ``Int``    |   电梯停靠一层所需时间   |
+|    $m$    |  ``[Int]``   |  电梯需响应的停靠任务数   |
+| $F_{max}$ |  ``[Int]``   |   电梯同向到达最远楼层   |
+| $F_{min}$ |  ``[Int]``   |   电梯反向到达最远楼层   |
+|   $N_p$   |   ``Int``    |   电梯系统的总乘客数    |
+|   $N_e$   |   ``Int``    |   群控系统中电梯总数    |
 
 ##### 约束条件
 
@@ -92,15 +98,35 @@ a destination dispatch iOS app for multi-elevator
 
 - Average Waiting Time($AWT$, 平均候梯时间)
 
-  $AWT = $
+  $AWT = \frac{\sum_{i=1}^{N_p}{T_w(i)}}{N_p}$
+
+  其中，
+
+  - 呼叫方向与电梯运行同向，且发生楼层$F_c$在电梯所在$F_0$前方
+
+    $T_w(i) = |F_c - F_0| * K_1 + m*K_2$
+
+  - 呼叫方向与电梯运行同向，且发生楼层$F_c$在电梯所在$F_0$后方
+
+    $T_w(i) = (|F_{max}-F_0| + |F_{max} - F_{min}| + |F_c - F_{min}|) * K_1 + m * K_2$
+
+  - 呼叫方向与电梯运行反向
+
+    $T_w(i) = (|F_{max}-F_0| + |F_{max} - F_c| * K_1 + m * K_2)$
+
+  - 呼叫方向与电梯运行同向，且$F_c = F_0$
+
+    $T_w(i) = 0$
 
 - Average Riding Time($ART$, 平均乘梯时间)
 
-  ​
+  $ART = \frac{\sum_{i=1}^{N_p}T_r(i)}{N_p}$
 
-- Per Run Consumption($PRC$, 系统运行能耗)
+- Energy Consumption($EC$, 系统运行能耗)
 
-  ​
+  由于电梯加减速时的能耗远大于直行匀速运行和静止能耗，故这里简单的考虑其等于电梯的起停次数。
+
+  $EC = \sum_{i=1}^{N_e}{E(i)} $
 
 - Fitness Function(适应度函数)
 
@@ -110,16 +136,37 @@ a destination dispatch iOS app for multi-elevator
 
 至此，我们可以根据不同模式给予三个指标不同的权重来达到不同情景下进一步优化分配的目的。
 
-| 交通模式 | w~1~ | $w_2$ | $w_3$ |
-| :--: | :--: | :---: | :---: |
-| 上行高峰 | 0.6  |  0.2  |  0.2  |
-|  层间  | 0.5  |  0.2  |  0.3  |
-|  空闲  | 0.4  |  0.2  |  0.2  |
-| 下行高峰 | 0.55 |  0.2  | 0.25  |
+| 交通模式 | $w_1$ | $w_2$ | $w_3$ |
+| :--: | :---: | :---: | :---: |
+| 上行高峰 |  0.6  |  0.2  |  0.2  |
+|  层间  |  0.5  |  0.2  |  0.3  |
+|  空闲  |  0.4  |  0.2  |  0.2  |
+| 下行高峰 | 0.55  |  0.2  | 0.25  |
 
-w~1~
+我们通过[CocoaPods](https://cocoapods.org/)来使用第三方库[PSOLib](https://github.com/IvanRublev/PSOLib)，代码如下：
+
+```Swift
+  func SPODispatch() {
+    let spaceMin: [Int] = Array(repeating: 0, count: liftRequestQueue.count)
+    let spaceMax: [Int] = Array(repeating: 5, count: liftRequestQueue.count)
+    let searchSpace = PSOSearchSpace(boundsMin: spaceMin, max: spaceMax)
+    let optimizer = PSOStandardOptimizer2011(for: searchSpace, optimum: 0, fitness: { (positions: UnsafeMutablePointer<Double>?, dimensions: Int32) -> Double in
+      // AWT: Average Waiting Time
+      // ART: Average Riding Time
+      // EC: Energy Consumption
+      // Total
+      var sFitnessFunc: Double = 0
+      return sFitnessFunc
+    }, before: nil, iteration: nil) { (optimizer: PSOStandardOptimizer2011?) in
+      // to do
+    }
+    optimizer?.operation.start()
+  }
+```
 
 ### Architecture
+
+为了考虑到两种算法的兼容，本项目数据结构的处理较为复杂。
 
 
 

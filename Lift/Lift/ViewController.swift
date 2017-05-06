@@ -223,7 +223,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
       }
       // ART: Average Riding Time
-      // RPC: Per Energy Consumption
+      // EC: Energy Consumption
       // Total
       var sFitnessFunc: Double = 0
       return sFitnessFunc
