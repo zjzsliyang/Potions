@@ -26,6 +26,8 @@ a destination dispatch iOS app for multi-elevator
 
 基于粒子群优化算法的实时调度和自动生成指令等功能仍在编写中。
 
+如果您的markdown阅读器不支持$LaTeX$，您可以选择[html](README.html)获得更好的阅读体验。
+
 ### Algorithms
 
 #### Naïve Algorithms
@@ -145,7 +147,7 @@ a destination dispatch iOS app for multi-elevator
 
 我们通过[CocoaPods](https://cocoapods.org/)来使用第三方库[PSOLib](https://github.com/IvanRublev/PSOLib)，代码如下：
 
-```Swift
+```swift
   func SPODispatch() {
     let spaceMin: [Int] = Array(repeating: 0, count: liftRequestQueue.count)
     let spaceMax: [Int] = Array(repeating: 5, count: liftRequestQueue.count)
@@ -168,7 +170,199 @@ a destination dispatch iOS app for multi-elevator
 
 为了考虑到两种算法的兼容，本项目数据结构的处理较为复杂。
 
+**基本常量的处理**：
 
+|        名称        |     类型      |      说明       |
+| :--------------: | :---------: | :-----------: |
+|  ``floorCount``  |   ``Int``   |      层数       |
+|  ``liftCount``   |   ``Int``   |     电梯数量      |
+|  ``distanceX``   | ``CGFloat`` |     电梯间距      |
+|  ``distanceY``   | ``CGFloat`` |      楼层高      |
+| ``liftVelocity`` | ``Double``  | 电梯通过一层的时间(速度) |
+|  ``liftDelay``   | ``Double``  |    电梯停靠时间     |
+
+**界面变量的处理**：
+
+|          名称           |        类型        |      说明       |
+| :-------------------: | :--------------: | :-----------: |
+|   ``upDownButton``    | ``[[UIButton]]`` |  每层楼中向上向下按钮   |
+|   `` liftDisplay``    |  ``[UILabel]``   |  每个电梯的实时层数显示  |
+| ``liftCurrentButton`` |   ``[[Bool]]``   | 每个电梯内部按钮是否被按下 |
+|       ``lift``        |    `[UIView]`    |     每个电梯      |
+
+**电梯调度变量的处理**：
+
+|               名称               |        类型        |                说明                 |
+| :----------------------------: | :--------------: | :-------------------------------: |
+|    ``liftCurrentPosition``     |  ``[CGFloat]``   |              电梯实时位置               |
+|    ``liftCurrentDirection``    |    ``[Int]``     |              电梯实时方向               |
+|        ``liftBeingSet``        |    ``[Bool]``    | 在``popoverView``dismiss后检查是否有新的指令 |
+|    ``liftDestinationDeque``    | ``[Deque<Int>]`` |            每个电梯的目标楼层队列            |
+| ``liftRandomDestinationDeque`` | ``[Deque<Int>]`` |           根据指令随机生成的目标队列           |
+|      ``liftRequestQueue``      |  ``Queue<Int>``  |           总调度系统中未被分配的指令           |
+
+由于实时更新电梯层数在主线程会阻塞UI，在新开的线程中造成与主线程不同步的情况，这里使用定时器`Timer`解决。
+
+```swift
+let timer = Timer(timeInterval: 0.1, repeats: true) { (timer) in
+  for i in 0..<self.liftCount {
+    self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: i), liftIndex: i)
+    self.updateCurrentDirection(liftIndex: i)
+  }
+}
+RunLoop.current.add(timer, forMode: .commonModes)
+timer.fire()
+```
+
+在每次用户dismiss popoverview时进行电梯内按钮是否按下的检查，将被按下的层数加入该电梯的目标楼层队列。
+
+```swift
+func inLiftScan(liftIndex: Int) {
+  for i in 0..<floorCount {
+    if liftCurrentButton[liftIndex][i] {
+      liftDestinationDeque[liftIndex].enqueueFirst(i)
+      liftCurrentButton[liftIndex][i] = false
+    }
+  }
+  _ = liftDestinationDeque[liftIndex].sorted()
+  liftAnimation(liftIndex: liftIndex)
+}
+```
+
+在用户在楼层处发出指令后，为了更接近实际，这里使用了根据方向指令随机生成目标楼层函数。
+
+```swift
+func randomGenerateDestination(destinationTag: Int) -> Int {
+  if destinationTag < 0 {
+    return Int(arc4random() % UInt32(abs(destinationTag + 1))) + 1
+  } else {
+    return floorCount - Int(arc4random() % UInt32(floorCount - destinationTag))
+  }
+}
+```
+
+**朴素的调度算法**：
+
+这里使用LOOK算法，
+
+```swift
+func naiveDispatch() {
+  if liftRequestQueue.isEmpty {
+    return
+  }
+  let currentRequest = liftRequestQueue.dequeue()
+  print("currentRequest: " + String(currentRequest))
+  if currentRequest < 0 {
+    var closestLiftDistance = 20
+    var closestLift = -1
+    for i in 0..<liftCount {
+      if liftCurrentDirection[i] <= 0 {
+        if closestLiftDistance > abs(getLiftCurrentFloor(liftIndex: i) + currentRequest) {
+          closestLift = i
+          closestLiftDistance = abs(getLiftCurrentFloor(liftIndex: i) + currentRequest)
+        }
+      }
+    }
+    if closestLift != -1 {
+      liftDestinationDeque[closestLift].enqueueFirst(-currentRequest - 1)
+      _ = liftDestinationDeque[closestLift].sorted()
+      liftRandomDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
+      return
+    } else {
+      liftRequestQueue.enqueue(currentRequest)
+    }
+  } else {
+    var closestLiftDistance = 20
+    var closestLift = -1
+    for j in 0..<liftCount {
+      if liftCurrentDirection[j] >= 0 {
+        if closestLiftDistance > abs(getLiftCurrentFloor(liftIndex: j) - currentRequest) {
+          closestLift = j
+          closestLiftDistance = abs(getLiftCurrentFloor(liftIndex: j) - currentRequest)
+        }
+      }
+    }
+    if closestLift != -1 {
+      liftDestinationDeque[closestLift].enqueueFirst(currentRequest - 1)
+      _ = liftDestinationDeque[closestLift].sorted()
+      liftRandomDestinationDeque[closestLift].enqueueFirst((randomGenerateDestination(destinationTag: currentRequest) - 1))
+      return
+    } else {
+      liftRequestQueue.enqueue(currentRequest)
+    }
+  }
+}
+```
+
+**电梯动画函数**：
+
+由于iOS动画执行是多线程的，对具有先后顺序逻辑的代码和函数在回调中执行。
+
+```swift
+func liftAnimation(liftIndex: Int) {
+  if liftDestinationDeque[liftIndex].isEmpty {
+    return
+  }
+  var destinationFloor: Int = 0
+  if liftCurrentDirection[liftIndex] == 0 {
+    let currentFloor = getLiftCurrentFloor(liftIndex: liftIndex)
+
+    if abs(currentFloor - (liftDestinationDeque[liftIndex].first! + 1)) < abs(currentFloor - (liftDestinationDeque[liftIndex].last! + 1)) {
+      destinationFloor = liftDestinationDeque[liftIndex].dequeueFirst() + 1
+    } else {
+      destinationFloor = liftDestinationDeque[liftIndex].dequeueLast() + 1
+    }
+  } else {
+    if liftCurrentDirection[liftIndex] > 0 {
+      destinationFloor = liftDestinationDeque[liftIndex].dequeueLast() + 1
+    } else {
+      destinationFloor = liftDestinationDeque[liftIndex].dequeueFirst() + 1
+    }
+  }
+  print("destination floor: " + String(destinationFloor))
+  let destinationDistance = CGFloat(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)) * (distanceY)
+  let destinationTime = liftVelocity * abs(Double(destinationFloor - getLiftCurrentFloor(liftIndex: liftIndex)))
+  UIView.animate(withDuration: destinationTime, delay: liftDelay, options: .curveEaseInOut, animations: {
+    self.lift[liftIndex].center.y = self.lift[liftIndex].center.y - destinationDistance
+  }, completion: { (finished) in
+    self.updateLiftDisplay(currentFloor: self.getLiftCurrentFloor(liftIndex: liftIndex), liftIndex: liftIndex)
+    self.updateUpDownButton(destinationTag: (self.liftCurrentDirection[liftIndex] * destinationFloor), liftIndex: liftIndex)
+    if !self.liftDestinationDeque[liftIndex].isEmpty {
+      self.liftAnimation(liftIndex: liftIndex)
+    }
+  })
+}
+```
+
+在电梯到达接到乘客后，取消对应按钮的高亮。
+
+```swift
+func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
+  print("destinationTag: " + String(destinationTag))
+  if destinationTag == 0 {
+    if !liftRandomDestinationDeque[liftIndex].isEmpty {
+      liftDestinationDeque[liftIndex].enqueueFirst(liftRandomDestinationDeque[liftIndex].dequeueFirst())
+      upDownButton[getLiftCurrentFloor(liftIndex: liftIndex) - 1][0].isSelected = false
+      upDownButton[getLiftCurrentFloor(liftIndex: liftIndex) - 1][1].isSelected = false
+    }
+    return
+  }
+  if destinationTag > 0 {
+    if upDownButton[destinationTag - 1][0].isSelected {
+      upDownButton[destinationTag - 1][0].isSelected = false
+    }
+  } else {
+    if upDownButton[-destinationTag - 1][1].isSelected {
+      upDownButton[-destinationTag - 1][1].isSelected = false
+    }
+  }
+  if !liftRandomDestinationDeque[liftIndex].isEmpty {
+    liftDestinationDeque[liftIndex].enqueueFirst(liftRandomDestinationDeque[liftIndex].dequeueFirst())
+    upDownButton[abs(destinationTag) - 1][0].isSelected = false
+    upDownButton[abs(destinationTag) - 1][1].isSelected = false
+  }
+}
+```
 
 ### Video
 
