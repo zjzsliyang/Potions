@@ -390,12 +390,6 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 - [ ] PSO Algorithms
 - [ ] Refactor the Project with MVC
 
-###  License
-
-- Created by Yang LI(1452669) under MIT LICENSE
-- Open Sourced on [GitHub](https://github.com/zjzsliyang/Potions)
-- Fork & Issues are both welcomed
-
 ### Reference
 
 [1] James Kennedy, Russell Eberhart: [Particle Swarm Optimization](https://www.cs.tufts.edu/comp/150GA/homeworks/hw3/_reading6%201995%20particle%20swarming.pdf), Purdue School of Engineering and Technology Indianapolis, 1995.
@@ -407,3 +401,77 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 [4] Parsopoulos KE, Vragatis MN: [Recent approaches to global optimization problems through Particle Swarm Optimization](https://link.springer.com/article/10.1023/A:1016568309421), Natural Computing, 2002.
 
 [5] 郭文忠, 陈国龙: 离散粒子群优化算法及其应用, 清华大学出版社, 2012.
+
+
+
+------
+
+
+
+## Memory Management
+
+a memory management simulation app
+
+![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
+
+**DDL: May 25th, 2017**
+
+### Requirements
+
+动态分区分配方式的模拟：
+
+- 假设初始态下可用内存640K，分别用首次适应算法和最佳适应算法进行内存块的分配和回收，并显示每次分配和回收的空闲分区链的情况。
+
+请求调页存储管理方式的模拟：
+
+- 假设每个页面可存放10条指令，分配给一个作业的内存块为4。模拟一个作业的执行过程，该作业有320条指令(即32页地址空间)。
+- 在模拟过程中，若所访问指令在内存中，则显示其物理地址，并转到下一条指令；反之，则发生缺页，此时记录缺页次数，并将其调入内存。若4个内存块中已装入作业，则需要进行页面置换。
+- 所有320条指令执行完成后，计算并显示作业执行过程中发生的缺页率。
+
+### Introduction
+
+
+
+### Algorithms
+
+### Architecture
+
+### Video
+
+### Screenshot
+
+
+
+------
+
+
+
+## File Management
+
+a file management simulation app
+
+![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
+
+**DDL:**
+
+### Requirements
+
+### Introduction
+
+### Algorithms
+
+### Architecture
+
+### Video
+
+### Screenshot
+
+
+
+------
+
+### License
+
+- Created by Yang LI(1452669) under MIT LICENSE
+- Open Sourced on [GitHub](https://github.com/zjzsliyang/Potions)
+- Fork & Issues are both welcomed
