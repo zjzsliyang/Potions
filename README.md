@@ -420,7 +420,7 @@ a memory management simulation app
 
 动态分区分配方式的模拟：
 
-- 假设初始态下可用内存640K，分别用首次适应算法和最佳适应算法进行内存块的分配和回收，并显示每次分配和回收的空闲分区链的情况。
+- 假设初始态下可用内存640K，分别用首次适应算法(first-fit)和最佳适应算法(best-fit)进行内存块的分配和回收，并显示每次分配和回收的空闲分区链的情况。
 
 请求调页存储管理方式的模拟：
 
@@ -433,6 +433,8 @@ a memory management simulation app
 
 
 ### Algorithms
+
+
 
 ### Architecture
 
@@ -459,6 +461,34 @@ a file management simulation app
 ### Introduction
 
 ### Algorithms
+
+**对Online Algorithms 下界的分析**
+
+> *Yao's Minimax Principle:*
+>
+> if for some input distribution no deterministic algorithm is k-competitive, then no randomized k-comprtitive algorithm exists. 
+
+假设有$k+1$页和$n$次访问，对于每次访问，每个页被请求的可能性为$\frac{1}{k+1}$，即可以认为长度为$n$的$k+1$页的均匀分布。
+
+对于Online Algorithm，在任何时刻内存中都只有$k$页，所以均有$\frac{1}{k+1}$的可能性请求页不在内存中。因此，在$n$次请求后的页错误数的期望为$\frac{n}{k+1}$，每次错误的平均请求数的期望为$k+1$,即$\Theta(k)$。
+
+对于Offline Algorithm，假设从开始都有权获取整个访问序列。作为最优算法的OPT，其每接收$k+1$个不同页请求的有关期望如下：
+
+- 总请求数期望$E[No.requests\ total] = \sum_{i=1}^{k+1}E[No.requests\ between\ the\ i-1^{th}\ distinct\ request\ and\ the\ i^{th}]$
+
+- 在$i-1$次不同请求后每次请求不同的$i$的概率
+
+  $P(each\ request\ after\ the\ i-1^{th}\ distinct\ request\ is\ the\ i^{th}\ distinct\ request) = \frac{k+2-i}{k+1}$
+
+  $E[No.requests\ between\ the\ i-1^{th}\ distinct\ request\ and\ the\ i^{th}] = \frac{k+1}{k+2-i}$
+
+- 求的总请求数期望
+
+  $E[No.requests\ total] = \sum_{i=1}^{k+1}\frac{k+1}{k+2-i} = (k+1)*(\sum_{j=1}^{k+1}\frac{1}{j}) = \Theta(klogk)$
+
+根据*Yao's Minimax Principle*，对于页置换算法，没有好于comprtitive ratio of fault为$\Theta(logk)$的随机算法。
+
+
 
 ### Architecture
 
