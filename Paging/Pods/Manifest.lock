@@ -1,0 +1,20 @@
+PODS:
+  - Buckets (2.0.0)
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
+  - TextFieldEffects (1.3.2)
+
+DEPENDENCIES:
+  - Buckets (~> 2.0)
+  - Charts
+  - TextFieldEffects
+
+SPEC CHECKSUMS:
+  Buckets: bfb032d458a88bda64f7144afcd974aad237ef21
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  TextFieldEffects: 9e5cce561ea39c75b86e9d3637601727a67e8b23
+
+PODFILE CHECKSUM: 8c98dac5d8d6c505e3fb851ce5a701f16bfe0ba6
+
+COCOAPODS: 1.1.1

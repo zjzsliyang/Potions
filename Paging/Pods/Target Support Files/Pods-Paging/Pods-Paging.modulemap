@@ -1,0 +1,6 @@
+framework module Pods_Paging {
+  umbrella header "Pods-Paging-umbrella.h"
+
+  export *
+  module * { export * }
+}
