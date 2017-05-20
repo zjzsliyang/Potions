@@ -434,34 +434,6 @@ a memory management simulation app
 
 ### Algorithms
 
-
-
-### Architecture
-
-### Video
-
-### Screenshot
-
-
-
-------
-
-
-
-## File Management
-
-a file management simulation app
-
-![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
-
-**DDL:**
-
-### Requirements
-
-### Introduction
-
-### Algorithms
-
 **对Online Algorithms 下界的分析**
 
 > *Yao's Minimax Principle:*
@@ -489,6 +461,32 @@ a file management simulation app
 根据*Yao's Minimax Principle*，对于页置换算法，没有好于comprtitive ratio of fault为$\Theta(logk)$的随机算法。
 
 
+
+### Architecture
+
+### Video
+
+### Screenshot
+
+
+
+------
+
+
+
+## File Management
+
+a file management simulation app
+
+![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
+
+**DDL:**
+
+### Requirements
+
+### Introduction
+
+### Algorithms
 
 ### Architecture
 
