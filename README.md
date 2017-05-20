@@ -408,9 +408,9 @@ func updateUpDownButton(destinationTag: Int, liftIndex: Int) {
 
 
 
-## Memory Management
+## Paging
 
-a memory management simulation app
+a memory management(paging) simulation app
 
 ![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
 

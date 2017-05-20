@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Memory Management
+//  Paging
 //
-//  Created by Yang Li on 19/05/2017.
+//  Created by Yang Li on 21/05/2017.
 //  Copyright © 2017 Yang Li. All rights reserved.
 //
 
