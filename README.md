@@ -458,7 +458,7 @@ a memory management(paging) simulation app
 
   $E[No.requests\ total] = \sum_{i=1}^{k+1}\frac{k+1}{k+2-i} = (k+1)*(\sum_{j=1}^{k+1}\frac{1}{j}) = \Theta(klogk)$
 
-根据*Yao's Minimax Principle*，对于页置换算法，没有好于comprtitive ratio of fault为$\Theta(logk)$的随机算法。
+根据*Yao's Minimax Principle*，对于页置换算法，没有优于comprtitive ratio of fault为$\Theta(logk)$的随机算法。
 
 
 

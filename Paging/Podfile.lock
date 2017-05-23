@@ -3,18 +3,21 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - NVActivityIndicatorView (3.6.1)
   - TextFieldEffects (1.3.2)
 
 DEPENDENCIES:
   - Buckets (~> 2.0)
   - Charts
+  - NVActivityIndicatorView
   - TextFieldEffects
 
 SPEC CHECKSUMS:
   Buckets: bfb032d458a88bda64f7144afcd974aad237ef21
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   TextFieldEffects: 9e5cce561ea39c75b86e9d3637601727a67e8b23
 
-PODFILE CHECKSUM: 8c98dac5d8d6c505e3fb851ce5a701f16bfe0ba6
+PODFILE CHECKSUM: befcffb8548ca7d84f0c3067f3eb2487d283467a
 
 COCOAPODS: 1.1.1
