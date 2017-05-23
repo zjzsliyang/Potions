@@ -25,6 +25,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   var virtualUnit = [UIView]()
   var pageTableUnit = [UIView]()
   var physicalUnit = [UIView]()
+  var pageTableFrameLabel = [UILabel]()
+  var pageTableTagLabel = [UILabel]()
+  var physicalLabel = [UILabel]()
   
   var algorithm: Int = 1 // 1 fot LRU, 0 for FIFO
   var instrCount = [Int](repeatElement(0, count: 320))
@@ -38,7 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
     initForPageTable()
     initForPhysical()
     initForDisk()
-    
+     
   }
   
   func initForBoard() {
@@ -82,6 +85,20 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
         let pageTableCell = UIView(frame: CGRect(x: 40 + j * 32, y: 5 + i * 26, width: 32, height: 26))
         pageTableCell.layer.borderColor = UIColor.lightGray.cgColor
         pageTableCell.layer.borderWidth = 0.5
+        if j == 0 {
+          let frameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 32, height: 26))
+          frameLabel.textAlignment = .center
+          frameLabel.font = UIFont(name: "Menlo", size: 15)
+          pageTableCell.addSubview(frameLabel)
+          pageTableFrameLabel.append(frameLabel)
+        } else {
+          let tagLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 32, height: 26))
+          tagLabel.textAlignment = .center
+          tagLabel.font = UIFont(name: "Menlo", size: 15)
+          tagLabel.text = "i"
+          pageTableCell.addSubview(tagLabel)
+          pageTableTagLabel.append(tagLabel)
+        }
         pageTableView.addSubview(pageTableCell)
         pageTableUnit.append(pageTableCell)
       }
@@ -97,6 +114,10 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
       let physicalCell = UIView(frame: CGRect(x: 40, y: 5 + i * 64, width: 180, height: 64))
       physicalCell.layer.borderColor = UIColor.lightGray.cgColor
       physicalCell.layer.borderWidth = 0.5
+      let physicalLabelUnit = UILabel(frame: CGRect(x: 0, y: 0, width: 180, height: 64))
+      physicalLabelUnit.textAlignment = .center
+      physicalLabel.append(physicalLabelUnit)
+      physicalCell.addSubview(physicalLabelUnit)
       physicalView.addSubview(physicalCell)
       physicalUnit.append(physicalCell)
     }
@@ -142,6 +163,28 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
     default:
       virtualUnit[index].backgroundColor = UIColor(colorLiteralRed: 81/255, green: 170/255, blue: 255/255, alpha: 1)
     }
+  }
+  
+  func updatePageTableCell(oldIndex: Int, newIndex: Int, newFrame: Int) {
+    pageTableTagLabel[oldIndex].text = "i"
+    pageTableFrameLabel[newIndex].text = String(newFrame)
+    pageTableTagLabel[newIndex].text = "v"
+  }
+  
+  func updatePhysicalCell(index: Int, pageNo: Int) {
+    physicalLabel[index].text = "Page: " + String(pageNo)
+  }
+  
+  func virtual2PageTable() {
+    
+  }
+  
+  func pageTable2Physical() {
+    
+  }
+  
+  func physical2Disk() {
+    
   }
   
   @IBAction func stepForward(_ sender: UIButton) {

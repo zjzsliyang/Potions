@@ -10,7 +10,10 @@ import Foundation
 import Buckets
 
 var instrustionQueue = Queue<Int>()
-
+var instrFIFOQueue = Queue<Int>()
+var instrLRUQueue = Queue<Int>()
+var instrOPTQueue = Queue<Int>()
+var currentInstrQueue = Queue<Int>()
 
 // Satisfy the requirement of "50% of the instructions are executed sequentially, 25% are evenly distributed in the pre-address section, and 25% are evenly distributed in the post-address section."
 func generateInstruction() {
@@ -30,4 +33,16 @@ func generateInstruction() {
     }
     generateInstruction()
   }
+}
+
+func pagingFIFO() {
+  
+}
+
+func pagingLRU() {
+  
+}
+
+func pagingOPT() {
+  
 }

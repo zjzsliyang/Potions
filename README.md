@@ -460,8 +460,6 @@ a memory management(paging) simulation app
 
 根据*Yao's Minimax Principle*，对于页置换算法，没有优于comprtitive ratio of fault为$\Theta(logk)$的随机算法。
 
-
-
 ### Architecture
 
 ### Video
