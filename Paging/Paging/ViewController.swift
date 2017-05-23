@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   var physicalUnit = [UIView]()
   
   var algorithm: Int = 1 // 1 fot LRU, 0 for FIFO
+  var instrCount = [Int](repeatElement(0, count: 320))
 
   
   override func viewDidLoad() {
@@ -114,11 +115,48 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   }
   
   @IBAction func step(_ sender: UIButton) {
-    
+    if instrustionQueue.isEmpty {
+      generateInstruction()
+      instrCount = [Int](repeatElement(0, count: 320))
+      for i in 0..<320 {
+        updateVirtualCell(index: i)
+      }
+    }
+    let instr = instrustionQueue.dequeue()
+    instrCount[instr] = instrCount[instr] + 1
+    updateVirtualCell(index: instr)
+  }
+  
+  func updateVirtualCell(index: Int) {
+    switch instrCount[index] {
+    case 0:
+      virtualUnit[index].backgroundColor = UIColor.clear
+    case 1:
+      virtualUnit[index].backgroundColor = UIColor(colorLiteralRed: 158/255, green: 208/255, blue: 255/255, alpha: 1)
+    case 2:
+      virtualUnit[index].backgroundColor = UIColor(colorLiteralRed: 141/255, green: 197/255, blue: 251/255, alpha: 1)
+    case 3:
+      virtualUnit[index].backgroundColor = UIColor(colorLiteralRed: 119/255, green: 189/255, blue: 255/255, alpha: 1)
+    case 4:
+      virtualUnit[index].backgroundColor = UIColor(colorLiteralRed: 98/255, green: 179/255, blue: 255/255, alpha: 1)
+    default:
+      virtualUnit[index].backgroundColor = UIColor(colorLiteralRed: 81/255, green: 170/255, blue: 255/255, alpha: 1)
+    }
   }
   
   @IBAction func stepForward(_ sender: UIButton) {
-    
+    if instrustionQueue.isEmpty {
+      generateInstruction()
+      instrCount = [Int](repeatElement(0, count: 320))
+      for i in 0..<320 {
+        updateVirtualCell(index: i)
+      }
+    }
+    while !instrustionQueue.isEmpty {
+      let instr = instrustionQueue.dequeue()
+      instrCount[instr] = instrCount[instr] + 1
+      updateVirtualCell(index: instr)
+    }
   }
   
 }

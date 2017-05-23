@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FA6FB491ED4467B006684B0 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA6FB481ED4467B006684B0 /* Algorithms.swift */; };
 		2FC6E82A1ED0A986008AC017 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6E8291ED0A986008AC017 /* AppDelegate.swift */; };
 		2FC6E82C1ED0A986008AC017 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6E82B1ED0A986008AC017 /* ViewController.swift */; };
 		2FC6E82F1ED0A986008AC017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6E82D1ED0A986008AC017 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FA6FB481ED4467B006684B0 /* Algorithms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
 		2FC6E8261ED0A986008AC017 /* Paging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC6E8291ED0A986008AC017 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FC6E82B1ED0A986008AC017 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				2FC6E8291ED0A986008AC017 /* AppDelegate.swift */,
 				2FC6E82B1ED0A986008AC017 /* ViewController.swift */,
+				2FA6FB481ED4467B006684B0 /* Algorithms.swift */,
 				2FC6E82D1ED0A986008AC017 /* Main.storyboard */,
 				2FC6E8301ED0A986008AC017 /* Assets.xcassets */,
 				2FC6E8321ED0A986008AC017 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			files = (
 				2FC6E82C1ED0A986008AC017 /* ViewController.swift in Sources */,
 				2FC6E82A1ED0A986008AC017 /* AppDelegate.swift in Sources */,
+				2FA6FB491ED4467B006684B0 /* Algorithms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

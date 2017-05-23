@@ -217,7 +217,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="step" width="42" height="42"/>
-        <image name="stepForward" width="42" height="42"/>
+        <image name="step" width="420" height="420"/>
+        <image name="stepForward" width="420" height="420"/>
     </resources>
 </document>
