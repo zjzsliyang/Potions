@@ -1,10 +1,11 @@
 //
-//  Linked List.swift
+//  LinkedList.swift
 //  Paging
 //
 //  Created by Yang Li on 24/05/2017.
 //  Copyright © 2017 Yang Li. All rights reserved.
 //
+//  Reference: https://hugotunius.se/2016/07/17/implementing-a-linked-list-in-swift.html
 
 import Foundation
 
@@ -123,8 +124,7 @@ extension LinkedList {
     if node === start && node === end {
       start = nil
       end = nil
-    }
-    else if node === start {
+    } else if node === start {
       start = node.next
     } else if node === end {
       end = node.previous

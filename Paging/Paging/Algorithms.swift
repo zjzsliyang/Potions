@@ -12,8 +12,8 @@ import Buckets
 var instrustionQueue = Queue<Int>()
 var instrFIFOQueue = Queue<Int>()
 var instrLRUQueue = Queue<Int>()
-var instrOPTQueue = Queue<Int>()
-var currentInstrQueue = Queue<Int>()
+var instrOPTLinkedList = LinkedList<Int>()
+var currentInstrLinkedList = LinkedList<Int>()
 
 /* Satisfy the requirement of "50% of the instructions are executed sequentially,
    25% are evenly distributed in the pre-address section,
@@ -58,7 +58,7 @@ func pagingFIFO(instr: Int) -> Int {
 
 func pagingLRU(instr: Int) -> Int {
   if instrLRUQueue.isEmpty {
-    print("instrLRUQueue is empty")
+    print("instrLRUQueue is empty.")
     return -1
   }
   let frameIndex: Int = instrLRUQueue.dequeue()
@@ -75,15 +75,37 @@ func pagingLRU(instr: Int) -> Int {
 }
 
 func pagingOPT(instr: Int) -> Int {
-  if instrOPTQueue.isEmpty {
-    print("instrOPTQueue is empty")
+  if instrOPTLinkedList.isEmpty {
+    print("instrOPTLinkedList is empty.")
     return -1
   }
   let frameIndex: Int = -1
   let iter = instrustionQueue.makeIterator()
-  var distinctCount = 0
   while let currentInstr = iter.next()  {
-    
+    var iterLL = instrOPTLinkedList.makeIterator()
+    while let tempInstr = iterLL.next() {
+      if tempInstr.value == currentInstr {
+        // delete the node
+      }
+    }
+    if instrOPTLinkedList.count < 7 {
+      // add the node
+    }
+    break;
   }
+  var iterLL = instrOPTLinkedList.makeIterator()
+  while let futureInstr = iterLL.next() {
+    var iterCurrentLL = currentInstrLinkedList.makeIterator()
+    while let currentInstr = iterCurrentLL.next() {
+      if futureInstr.value == currentInstr.value {
+        if currentInstrLinkedList.count == 1 {
+          // delete the node
+          // frame = this node value
+        }
+        // delete the node
+      }
+    }
+  }
+  // frame = current node value
   return frameIndex
 }

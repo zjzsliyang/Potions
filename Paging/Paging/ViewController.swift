@@ -148,6 +148,31 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
     let instr = instrustionQueue.dequeue()
     instrCount[instr] = instrCount[instr] + 1
     updateVirtualCell(index: instr)
+    paging(index: instr)
+  }
+  
+  func paging(index: Int) {
+    var page: Int = -1
+    if algorithm == 1 { // for LRU
+      page = pagingLRU(instr: index)
+    } else { // for FIFO
+      page = pagingFIFO(instr: index)
+    }
+    updatePageTableCell(oldIndex: getOldPageTableIndex(newFrame: page), newIndex: index, newFrame: page)
+    updatePhysicalCell(index: page, pageNo: index)
+  }
+  
+  func getOldPageTableIndex(newFrame: Int) -> Int {
+    for i in 0..<32 {
+      let pageTableOldIndex = pageTableFrameLabel[i].text
+      if pageTableOldIndex == nil {
+        return -1
+      }
+      if Int(pageTableOldIndex!)! == newFrame {
+        return Int(pageTableOldIndex!)!
+      }
+    }
+    return -1
   }
   
   func updateVirtualCell(index: Int) {
@@ -178,17 +203,19 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   }
   
   func virtual2PageTable(vIndex: Int, ptIndex: Int) {
-    
+//    TODO
+//    animation
   }
   
   func pageTable2Physical(ptIndex: Int, pIndex: Int) {
-    
+//    TODO
+//    animation
   }
   
   func physical2Disk(pIndex: Int) {
     diskAnimationView.type = .ballGridPulse
     diskAnimationView.startAnimating()
-    
+//    TODO
 //    diskAnimationView.stopAnimating()
   }
   
