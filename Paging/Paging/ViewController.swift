@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import TextFieldEffects
+import NVActivityIndicatorView
 
 class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
 
@@ -22,6 +23,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   @IBOutlet weak var physicalView: UIView!
   @IBOutlet weak var diskView: UIView!
   
+  @IBOutlet weak var diskAnimationView: NVActivityIndicatorView!
+  
   var virtualUnit = [UIView]()
   var pageTableUnit = [UIView]()
   var physicalUnit = [UIView]()
@@ -31,7 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   
   var algorithm: Int = 1 // 1 fot LRU, 0 for FIFO
   var instrCount = [Int](repeatElement(0, count: 320))
-
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,7 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
     initForPageTable()
     initForPhysical()
     initForDisk()
-     
+    
   }
   
   func initForBoard() {
@@ -175,17 +177,22 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
     physicalLabel[index].text = "Page: " + String(pageNo)
   }
   
-  func virtual2PageTable() {
+  func virtual2PageTable(vIndex: Int, ptIndex: Int) {
     
   }
   
-  func pageTable2Physical() {
+  func pageTable2Physical(ptIndex: Int, pIndex: Int) {
     
   }
   
-  func physical2Disk() {
+  func physical2Disk(pIndex: Int) {
+    diskAnimationView.type = .ballGridPulse
+    diskAnimationView.startAnimating()
     
+//    diskAnimationView.stopAnimating()
   }
+  
+  
   
   @IBAction func stepForward(_ sender: UIButton) {
     if instrustionQueue.isEmpty {

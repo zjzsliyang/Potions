@@ -35,14 +35,49 @@ func generateInstruction() {
   }
 }
 
-func pagingFIFO() {
-  
+func pagingFIFO(instr: Int) -> Int {
+  if instrFIFOQueue.isEmpty {
+    print("instrFIFOQueue is empty.")
+    return -1
+  }
+  let frameIndex: Int = instrFIFOQueue.dequeue()
+  let iter = instrFIFOQueue.makeIterator()
+  var tag = 0 // 1 for already have the instr in the queue
+  while let currentInstr = iter.next() {
+    if currentInstr == instr {
+      tag = 1
+    }
+  }
+  if tag == 0 {
+    instrFIFOQueue.enqueue(instr)
+  }
+  return frameIndex
 }
 
-func pagingLRU() {
-  
+func pagingLRU(instr: Int) -> Int {
+  if instrLRUQueue.isEmpty {
+    print("instrLRUQueue is empty")
+    return -1
+  }
+  let frameIndex: Int = instrLRUQueue.dequeue()
+  let tempLRUQueue = instrLRUQueue
+  instrLRUQueue.removeAll()
+  let iter = tempLRUQueue.makeIterator()
+  while let currentInstr = iter.next() {
+    if currentInstr != instr {
+      instrLRUQueue.enqueue(currentInstr)
+    }
+  }
+  instrLRUQueue.enqueue(instr)
+  return frameIndex
 }
 
-func pagingOPT() {
+func pagingOPT(instr: Int) -> Int {
+  if instrOPTQueue.isEmpty {
+    print("instrOPTQueue is empty")
+    return -1
+  }
+  let frameIndex: Int = -1
   
+  return frameIndex
 }

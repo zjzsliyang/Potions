@@ -173,6 +173,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ojl-Lf-PMG" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                        <rect key="frame" x="88" y="114" width="64" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93377995491027832" green="0.95667135715484619" blue="0.97648060321807861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
@@ -203,6 +208,7 @@
                     <connections>
                         <outlet property="conclusionBoard" destination="A3n-vW-7Kl" id="ZCZ-gP-mce"/>
                         <outlet property="dashBoard" destination="Bxp-EC-nrt" id="LA6-b6-paA"/>
+                        <outlet property="diskAnimationView" destination="ojl-Lf-PMG" id="qxc-fK-lAn"/>
                         <outlet property="diskView" destination="gHD-u9-uPQ" id="EjC-eV-rxo"/>
                         <outlet property="missNo" destination="GnQ-5s-clp" id="irw-xA-bce"/>
                         <outlet property="missRate" destination="FVB-Hv-kxc" id="JaP-v2-co4"/>
