@@ -15,7 +15,9 @@ var instrLRUQueue = Queue<Int>()
 var instrOPTQueue = Queue<Int>()
 var currentInstrQueue = Queue<Int>()
 
-// Satisfy the requirement of "50% of the instructions are executed sequentially, 25% are evenly distributed in the pre-address section, and 25% are evenly distributed in the post-address section."
+/* Satisfy the requirement of "50% of the instructions are executed sequentially,
+   25% are evenly distributed in the pre-address section,
+   and 25% are evenly distributed in the post-address section." */
 func generateInstruction() {
   if instrustionQueue.count < 320 {
     let random = arc4random() % 320
@@ -78,6 +80,10 @@ func pagingOPT(instr: Int) -> Int {
     return -1
   }
   let frameIndex: Int = -1
-  
+  let iter = instrustionQueue.makeIterator()
+  var distinctCount = 0
+  while let currentInstr = iter.next()  {
+    
+  }
   return frameIndex
 }
