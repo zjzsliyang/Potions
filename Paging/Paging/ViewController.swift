@@ -148,7 +148,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
     let instr = instrustionQueue.dequeue()
     instrCount[instr] = instrCount[instr] + 1
     updateVirtualCell(index: instr)
-    paging(index: instr)
+    paging(index: instr / 10)
   }
   
   func paging(index: Int) {
@@ -159,7 +159,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
       page = pagingFIFO(instr: index)
     }
     updatePageTableCell(oldIndex: getOldPageTableIndex(newFrame: page), newIndex: index, newFrame: page)
-    updatePhysicalCell(index: page, pageNo: index)
+    updatePhysicalCell(index: page, pageNo: Int(index / 10))
   }
   
   func getOldPageTableIndex(newFrame: Int) -> Int {
@@ -169,7 +169,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
         return -1
       }
       if Int(pageTableOldIndex!)! == newFrame {
-        return Int(pageTableOldIndex!)!
+        return i
       }
     }
     return -1
@@ -193,13 +193,19 @@ class ViewController: UIViewController, UITextFieldDelegate, ChartViewDelegate {
   }
   
   func updatePageTableCell(oldIndex: Int, newIndex: Int, newFrame: Int) {
-    pageTableTagLabel[oldIndex].text = "i"
-    pageTableFrameLabel[newIndex].text = String(newFrame)
-    pageTableTagLabel[newIndex].text = "v"
+    if oldIndex > -1 {
+      pageTableTagLabel[oldIndex].text = "i"
+    }
+    if newIndex > -1 {
+      pageTableFrameLabel[newIndex].text = String(newFrame)
+      pageTableTagLabel[newIndex].text = "v"
+    }
   }
   
   func updatePhysicalCell(index: Int, pageNo: Int) {
-    physicalLabel[index].text = "Page: " + String(pageNo)
+    if index > -1 {
+      physicalLabel[index].text = "Page: " + String(pageNo)
+    }
   }
   
   func virtual2PageTable(vIndex: Int, ptIndex: Int) {

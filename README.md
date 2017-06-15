@@ -428,10 +428,6 @@ a memory management(paging) simulation app
 - 在模拟过程中，若所访问指令在内存中，则显示其物理地址，并转到下一条指令；反之，则发生缺页，此时记录缺页次数，并将其调入内存。若4个内存块中已装入作业，则需要进行页面置换。
 - 所有320条指令执行完成后，计算并显示作业执行过程中发生的缺页率。
 
-### Introduction
-
-
-
 ### Algorithms
 
 **对Online Algorithms 下界的分析**
@@ -459,40 +455,6 @@ a memory management(paging) simulation app
   $E[No.requests\ total] = \sum_{i=1}^{k+1}\frac{k+1}{k+2-i} = (k+1)*(\sum_{j=1}^{k+1}\frac{1}{j}) = \Theta(klogk)$
 
 根据*Yao's Minimax Principle*，对于页置换算法，没有优于comprtitive ratio of fault为$\Theta(logk)$的随机算法。
-
-### Architecture
-
-### Video
-
-### Screenshot
-
-
-
-------
-
-
-
-## File Management
-
-a file management simulation app
-
-![](https://img.shields.io/badge/iOS-10.3-brightgreen.svg) ![](https://img.shields.io/badge/iPad%20Pro-12.9%20inch-orange.svg) ![](https://img.shields.io/badge/Swift-3-blue.svg)
-
-**DDL:**
-
-### Requirements
-
-### Introduction
-
-### Algorithms
-
-### Architecture
-
-### Video
-
-### Screenshot
-
-
 
 ------
 

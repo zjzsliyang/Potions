@@ -40,6 +40,7 @@ func generateInstruction() {
 func pagingFIFO(instr: Int) -> Int {
   if instrFIFOQueue.isEmpty {
     print("instrFIFOQueue is empty.")
+    instrFIFOQueue.enqueue(instr)
     return -1
   }
   let frameIndex: Int = instrFIFOQueue.dequeue()
@@ -59,6 +60,7 @@ func pagingFIFO(instr: Int) -> Int {
 func pagingLRU(instr: Int) -> Int {
   if instrLRUQueue.isEmpty {
     print("instrLRUQueue is empty.")
+    instrLRUQueue.enqueue(instr)
     return -1
   }
   let frameIndex: Int = instrLRUQueue.dequeue()
